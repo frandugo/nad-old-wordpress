@@ -1,4 +1,3 @@
-
 <footer>
 	<div class="container">
 		<div class="footer">
@@ -23,8 +22,11 @@
 				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
+	<div class="footer__copyright">
+	© 2023 Nowadays | Less Than .3% THC (Hemp Derived)
+	</div>
 </footer>
 <?php
-    wp_footer(); 
+wp_footer();
 ?>

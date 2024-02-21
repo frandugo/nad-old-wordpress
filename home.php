@@ -1,16 +1,11 @@
 <?php /* Template Name: Home */ ?>
 <?php get_header(); ?>
-<?php while ( have_posts() ) : the_post(); ?>
-
-    <?php $hero_button_text = get_field('hero_button_text', $post->ID); ?>
-
-<?php endwhile; ?>
 <div class="hero">
     <div class="hero__image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/nowadays-hero-img.png')">
         <div class="hero__image-info">
             <h2>Drink<br>Nowadays</h2>
             <p>Cannabis in a Bottle</p>
-            <a class='btn btn__beige--big' href="#"><?php echo $hero_button_text; ?></a>
+            <a class='btn btn__beige--big' href="#"><?php?></a>
         </div>
     </div>
     <div class="hero__video" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/nowadays-hero-video.png')"></div>
