@@ -1,0 +1,21 @@
+.title_lg{
+    font-family: $font_family;
+    font-size: $titles;
+    font-weight: $bold;
+    line-height: $lh_titles;
+}
+
+.nav_text{
+    font-family: $font_family;
+    font-size: $small;
+    font-weight: $normal;
+    line-height: $lh_small;
+}
+
+.nav_text--button{
+    font-family: $font_family;
+    font-size: $xsmall;
+    font-weight: $bold;
+    line-height: $lh_small;
+    text-transform: uppercase;
+}

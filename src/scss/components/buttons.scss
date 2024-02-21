@@ -1,0 +1,37 @@
+.btn {
+  font-family: $font_family;
+  text-transform: uppercase;
+  background-color: $beige;
+  color: $black;
+  &__beige--big {
+    display: inline-block;
+    font-size: 18px;
+    padding: 20px 160px;
+  }
+  &__beige--big:hover {
+    background: $black;
+    color: $white;
+  }
+  &__beige--small {
+    display: inline-block;
+    font-size: 18px;
+    padding: 19px 110px;
+  }
+  &__beige--small:hover {
+    background: $black;
+    color: $white;
+  }
+  &__white--small {
+    background: $white;
+    border: 2px solid $bg_color;
+    color: $bg_color;
+    display: inline-block;
+    font-size: 18px;
+    padding: 19px 110px;
+    text-align: center;
+  }
+  &__white--small:hover {
+    background: $black;
+    color: $white;
+  }
+}

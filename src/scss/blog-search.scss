@@ -1,0 +1,43 @@
+.blog-search {
+  background-color: $bg_color;
+  &__container {
+    padding: 2.5rem 0;
+    text-align: center;
+  }
+  &__title {
+    color: $white;
+    font-family: $font_family;
+    font-size: $titles;
+    font-weight: $bold;
+    line-height: $lh_titles;
+  }
+  &__form{
+    position: relative;
+    width: 100%;
+  }
+  &__input {
+    border: 1px solid $gray;
+    border-radius: 6px;
+    padding: 1rem;
+    position: relative;
+    width: 40%;
+    &::placeholder {
+      color: #000;
+      font-family: $font_family;
+      font-size: $base;
+      font-weight: $normal;
+      letter-spacing: 0px;
+      line-height: $lh_base;
+      text-align: left;
+    }
+  }
+  &__label {
+    cursor: pointer;
+    height: 17px;
+    position: absolute;
+    right: 31%;
+    top: 16px;
+    width: 17px;
+    z-index: 2;
+  }
+}

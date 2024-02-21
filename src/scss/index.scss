@@ -1,0 +1,28 @@
+@import "mixins/flex.scss";
+@import "mixins/flex.scss";
+
+@import "global/fonts.scss";
+@import "global/variables.scss";
+@import "global/reset.scss";
+@import "global/container.scss";
+@import "global/typography.scss";
+
+@import "@splidejs/splide/css/core";
+
+@import "navbar.scss";
+
+@import "header.scss";
+@import "featured-post__card.scss";
+@import "featured-posts.scss";
+@import "blog-search.scss";
+
+// Components
+
+@import "components/buttons.scss";
+@import "components/progressBar.scss";
+
+// Pages
+
+@import "slick.scss";
+@import "home.scss";
+@import "footer.scss";

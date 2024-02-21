@@ -1,0 +1,10 @@
+// Clase .container
+.container {
+  width: 1254px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  // Para resoluciones menores de 1440px
+  @media (max-width: 1440px) {
+  }
+}

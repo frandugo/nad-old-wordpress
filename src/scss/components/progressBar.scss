@@ -1,0 +1,13 @@
+.progress {
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: $white;
+    background-image: linear-gradient(to right, #E7B78A, #E7B78A);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    
+    transition: background-size .4s ease-in-out;
+  }

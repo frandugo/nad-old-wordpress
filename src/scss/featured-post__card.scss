@@ -1,0 +1,71 @@
+.featured-post {
+  max-height: 350px;
+  position: relative;
+  
+  &__card {
+    background: rgb(0, 235, 207);
+    background: radial-gradient(
+      ellipse at 70% 20%,
+      rgba(0, 235, 207, 0.8) 0%,
+      rgba(59, 87, 149, 0.8) 63%
+    );
+    background-blend-mode: multiply;
+    height: 100%;
+    padding: 0 3rem;
+    @include flex(row, space-between, center);
+
+    &-image,
+    &-info {
+      height: auto;
+      width: 50%;
+    }
+    &-image {
+      text-align: center;
+    }
+
+    &-background {
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      opacity: 0.7;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &-thumbnail {
+      border-radius: 12px;
+      height: auto;
+      margin: 0 auto;
+      max-width: 350px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &-title {
+      color: $white;
+      @extend .title_lg;
+    }
+
+    &-link {
+      display: flex;
+      width: fit-content;
+      height: 4rem;
+      padding: 0.8125rem 2.5rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.375rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--website-buttons-accent, #00ebcf);
+      background: var(--website-buttons-accent, #00ebcf);
+      text-transform: uppercase;
+      font-size: $base;
+      font-family: $font_family;
+      font-weight: $bold;
+      color: #3D4563;
+      text-decoration: none;
+    }
+  }
+}
