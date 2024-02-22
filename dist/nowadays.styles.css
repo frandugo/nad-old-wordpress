@@ -808,12 +808,7 @@ header.sticky {
 .icons {
   position: relative;
   background-color: #fdfbf2;
-  /* display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center; */
-  /*  padding: 0 170px;
-  padding: 60px 150px; */
+  padding: 20px 0;
 }
 .icons .icons__icon {
   display: flex;

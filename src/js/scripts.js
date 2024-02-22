@@ -1,41 +1,106 @@
-jQuery(document).ready(function() {
 
-    // Slick slider
-    const loadSlick = () => {
-      let $slider = jQuery('.slider');
-      let $progressBar = jQuery('.progress');
-      let $progressBarLabel = jQuery( '.slider__label' );
-      
-      $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {   
-        let calc = ( (nextSlide) / (slick.slideCount-1) ) * 100;
-        
-        $progressBar
-          .css('background-size', calc + '% 100%')
-          .attr('aria-valuenow', calc );
-        
-        $progressBarLabel.text( calc + '% completed' );
-      });
-      
-      $slider.slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        speed: 400,
-        prevArrow: document.getElementById('js-prev-button'),
-        nextArrow: document.getElementById('js-next-button')
-      }); 
-    }
-    
-    const stickyHeader = () => {
-      jQuery(window).scroll(function() {  
-        if (jQuery(this).scrollTop() > 20) {    
-            jQuery('header').addClass("sticky");  
-          } else {  
-            jQuery('header').removeClass("sticky");  
-          }  
-        }); 
-    }   
 
-    loadSlick();
-    stickyHeader();
+function stickyHeader() {
+  jQuery(window).scroll(function() {  
+    if (jQuery(this).scrollTop() > 20) {    
+        jQuery('header').addClass("sticky");  
+      } else {  
+        jQuery('header').removeClass("sticky");  
+      }  
+    }); 
+} 
 
+
+function initializeSlider(
+  sliderSelector,
+  progressBarSelector,
+  progressBarLabelSelector,
+  arrowSelectors,
+  slidesToShow
+) {
+  const $slider = jQuery(sliderSelector);
+  const $progressBar = jQuery(progressBarSelector);
+  const $progressBarLabel = jQuery(progressBarLabelSelector);
+
+  $slider.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+    const calc = (nextSlide / (slick.slideCount - 1)) * 100;
+
+    $progressBar
+      .css("background-size", calc + "% 100%")
+      .attr("aria-valuenow", calc);
+
+    $progressBarLabel.text(calc + "% completed");
   });
+  $slider.slick({
+    speed: 400,
+    prevArrow: document.getElementById(arrowSelectors.prev),
+    nextArrow: document.getElementById(arrowSelectors.next),
+    slidesToShow: slidesToShow,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+}
+  
+function initializeDotsSlider(sliderSelector, slidesToShow) {
+  const $slider = jQuery(sliderSelector);
+
+  $slider.slick({
+    speed: 400,
+    prevArrow: document.getElementById("js-prev-button-dots"),
+    nextArrow: document.getElementById("js-next-button-dots"),
+    slidesToShow: slidesToShow,
+    dots: true,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+}
+  
+// Usage
+jQuery(document).ready(function () {
+  initializeSlider(
+    ".slider",
+    ".progress",
+    ".slider__label",
+    { prev: "js-prev-button", next: "js-next-button" },
+    3
+  );
+  initializeSlider(
+    ".slider1",
+    ".progress1",
+    ".slider__label1",
+    { prev: "js-prev-button1", next: "js-next-button1" },
+    4
+  );
+  initializeSlider(
+    ".slider2",
+    ".progress2",
+    ".slider__label2",
+    { prev: "js-prev-button2", next: "js-next-button2" },
+    3
+  );
+  initializeSlider(
+    ".slider3",
+    ".progress3",
+    ".slider__label3",
+    { prev: "js-prev-button3", next: "js-next-button3" },
+    4
+  );
+  initializeDotsSlider(".slider-dots", 4);
+  stickyHeader();
+});
