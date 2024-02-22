@@ -46,16 +46,17 @@
   }
 }
 .icons {
+  position: relative;
   background-color: #fdfbf2;
-  display: grid;
+  /* display: grid;
   gap: 30px;
   grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  padding: 0 170px;
-  padding: 60px 150px;
-  &__icon {
-    align-items: center;
+  justify-content: center; */
+  /*  padding: 0 170px;
+  padding: 60px 150px; */
+  .icons__icon {
     display: flex;
+    align-items: center;
     gap: 30px;
     justify-content: center;
     align-items: end;
@@ -104,10 +105,10 @@
     text-transform: capitalize;
   }
   &__products {
-    display: grid;
+    /* display: grid;
     gap: 30px;
     grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
+    justify-content: center; */
   }
 }
 
@@ -131,6 +132,8 @@
     margin-bottom: 64px;
     text-align: center;
     transition: 0.2s linear;
+    display: flex;
+    justify-content: center;
     img {
       height: 460px;
     }
@@ -334,7 +337,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 112px 0 60px 0;
-
+  // padding: 60px 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
   h2 {
     font-family: "EuclidFlexMedium";
     font-size: 48px;
@@ -348,19 +355,19 @@
     margin-bottom: 2rem;
   }
   .good-time-section__products {
-    display: flex;
     font-family: sans-serif;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    overflow-x: auto;
     width: 100%;
 
     .good-time-section-product__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 2rem;
       img {
         border: none;
         margin-bottom: 10px;
         transition: border-color 0.3s ease;
-        width: 280px;
+        width: 100%;
         &:hover {
           border: 4px solid $beige;
           transition: 0.2s all;
@@ -377,7 +384,7 @@
         border: none;
         height: 48px;
         margin-top: 1rem;
-        width: 286px;
+        width: 100%;
         &:hover {
           background-color: #101010;
           color: $white;
@@ -394,25 +401,11 @@
   gap: 80px;
   justify-content: space-between;
   position: relative;
-  &__empty {
-    background-color: white;
-    width: 195px;
-  }
+  gap: 80px;
+  margin-top: 2rem;
   &__buttons {
     display: flex;
     gap: 10px;
-  }
-  &__empty,
-  &__progress {
-    height: 4px;
-    left: 0;
-    position: absolute;
-    top: 23px;
-  }
-  &__progress {
-    background-color: #e7b78a;
-    width: 0;
-    z-index: 1;
   }
   button {
     background-color: transparent;
@@ -424,6 +417,31 @@
     }
   }
   &__buttons {
+    &--left {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.slider-dots {
+  &__buttons {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    &--right,
+    &--left {
+      background-color: transparent;
+      height: 48px;
+      width: 48px;
+      &.disabled {
+        opacity: 0.5;
+      }
+    }
     &--left {
       img {
         transform: rotate(180deg);
@@ -626,9 +644,6 @@
       color: $white;
     }
   }
-  .scroll-indicator__empty {
-    background-color: rgba(241, 239, 232, 1);
-  }
 }
 
 /* what everyone */
@@ -645,9 +660,6 @@
     gap: 2rem;
     overflow-x: auto;
     padding: 36px 0;
-  }
-  .scroll-indicator__empty {
-    background-color: rgba(241, 239, 232, 1);
   }
   &__buttons-container {
     align-items: center;
@@ -989,15 +1001,6 @@ input:focus ~ .highlight {
     justify-content: center;
     text-transform: uppercase;
     width: 100%;
-  }
-
-  /*
-      Scroll indicator
-  */
-  .scroll-indicator {
-    &__empty {
-      width: 85%;
-    }
   }
 
   /* 
