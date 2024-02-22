@@ -5,7 +5,7 @@
         <div class="hero__image-info">
             <h2>Drink<br>Nowadays</h2>
             <p>Cannabis in a Bottle</p>
-            <a class='btn btn__beige--big' href="#"><?php?></a>
+            <a class='btn btn__beige--big' href="#">SHOP NOW</a>
         </div>
     </div>
     <div class="hero__video" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/nowadays-hero-video.png')"></div>
@@ -87,7 +87,7 @@
                         <input type="radio" id="star1" name="rating" value="1"/>
                         <label for="star1">&#9733;</label>
                     </div>
-                    <span>67 reviews</span>
+                    <span class="bs-product__span">67 reviews</span>
                     <p class="bs-product__description">2mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/33mg per bottle</p>
                     <p class="bs-product__price">$39.99</p>
@@ -112,7 +112,7 @@
                         <input type="radio" id="star6" name="rating1" value="1"/>
                         <label for="star6">&#9733;</label>
                     </div>
-                    <span>87 reviews</span>
+                    <span class="bs-product__span">87 reviews</span>
                     <p class="bs-product__description">6mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/100mg per bottle</p>
                     <p class="bs-product__price">$59.99</p>
@@ -137,7 +137,7 @@
                         <input type="radio" id="star11" name="rating3" value="1"/>
                         <label for="star11">&#9733;</label>
                     </div>
-                    <span>98 reviews</span>
+                    <span class="bs-product__span">98 reviews</span>
                     <p class="bs-product__description">10mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/166mg per bottle</p>
                     <p class="bs-product__price">$79.99</p>
@@ -307,21 +307,23 @@
                 QUESTIONS?</h3>
 
             <div class="have-questions__accordion">
-                <details>
+                <details name="accordion">
                     <summary>THC? What’s the hype?</summary>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>THC is what gives you that perfect lift. A cannabinoid derived from marijuana or hemp, THC is the secret sauce that gives Nowadays it’s social buzz. Each shot (1.5oz) of Nowadays has 2mg. 6mg, or 10MG of THC to deliver a consistent, controllable high, every single time.</p>
                 </details>
-                <details>
+                <details name="accordion">
                     <summary>Does it taste like Weed?</summary>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Natural fruit flavors, a crisp finish, and absolutely zero cannabis taste. Whether going out or staying in, Nowadays was created with a flavor to assimilate to any occasion.
+
+</p>
                 </details>
-                <details>
+                <details name="accordion">
                     <summary>How Many Can I Drink?</summary>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Designed to replicate the strength of alcohol, we recommend beginners start with a single shot over ice or mix up one of our signature cocktails. Wait 15-30 minutes, and craft your experience from there.</p>
                 </details>
-                <details>
+                <details name="accordion">
                     <summary>Where Can I Find Nowadays?</summary>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Nowadays can be ordered on our website and shipped directly to your door. The product is currently being rolled out to retailers across the country and we will be adding a Find Us page soon to find a store near you!</p>
                 </details>
 
             </div>
