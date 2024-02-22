@@ -70,7 +70,7 @@
 <section class="best-sellers">
     <div class="container">
         <div class="best-sellers__head">
-            <h2 class="best-sellers__title">Shop Nowadays Best Sellers</h2>
+            <h2 class="best-sellers__title title_sm">Shop Nowadays Best Sellers</h2>
             <p class="best-sellers__description">Bright. Buzzy. Balanced</p>
         </div>
         <div class="best-sellers__products">

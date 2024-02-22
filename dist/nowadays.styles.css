@@ -107,6 +107,10 @@ table {
   line-height: 46px;
 }
 
+.title_sm {
+  font-family: "euclid_circular_aregular";
+}
+
 .nav_text, .nav__link {
   font-family: "euclid_circular_amedium", sans-serif;
   font-size: 0.889rem;
@@ -315,10 +319,6 @@ table {
   border: none;
 }
 
-.hdr__logo-link {
-  width: 540px;
-}
-
 .main-menu {
   width: 100%;
 }
@@ -343,6 +343,9 @@ header {
   z-index: 10000;
   position: fixed;
   width: 100%;
+}
+header.sticky {
+  background-color: #101010;
 }
 
 .nav__items {
@@ -779,7 +782,6 @@ header {
   margin-bottom: 60px;
 }
 .best-sellers__title {
-  font-family: "Euclid Flex";
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 0em;
@@ -960,7 +962,7 @@ header {
 }
 .media-testimonials-container h2 {
   color: #101010;
-  font-family: "Euclid Flex";
+  font-family: "euclid_circular_amedium", sans-serif;
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 0em;

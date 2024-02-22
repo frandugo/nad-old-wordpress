@@ -15,7 +15,9 @@
                     ); 
                 ?>
             </nav>
+            <a href="/">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg'" class="hdr__logo-link" href={{site.url}} rel="home">
+            </a>
             <nav class="main-menu">
                 <?php 
                     wp_nav_menu(   
