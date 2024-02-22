@@ -1,7 +1,7 @@
 footer {
   background: #2d2926;
-  padding: 40px 0 20px 0;
   font-family: $font_family;
+  padding: 40px 0 20px 0;
 }
 .footer {
   display: flex;
@@ -26,5 +26,42 @@ footer {
     color: $white;
     display: inline-block;
     margin-bottom: 16px;
+  }
+}
+.footer__copyright {
+  color: $white;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 12px;
+  text-align: end;
+  padding: 0 12px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column-reverse;
+    gap: 0;
+    align-items: center;
+    img {
+      width: 160px;
+    }
+  }
+  .footer-links {
+    &__left {
+      a {
+        font-size: 12px;
+      }
+    }
+    &__rigth {
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .footer__copyright {
+    text-align: center;
+    padding: 12px 0;
   }
 }

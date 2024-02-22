@@ -1,12 +1,12 @@
 .btn {
-  font-family: $font_family;
+  font-family: "euclid_flex_medium";
   text-transform: uppercase;
   background-color: $beige;
   color: $black;
   &__beige--big {
     display: inline-block;
-    font-size: 18px;
-    padding: 20px 160px;
+    font-size: 32px;
+    padding: 20px 136px;
   }
   &__beige--big:hover {
     background: $black;
@@ -14,7 +14,7 @@
   }
   &__beige--small {
     display: inline-block;
-    font-size: 18px;
+    font-size: 20px;
     padding: 19px 110px;
   }
   &__beige--small:hover {
@@ -27,7 +27,7 @@
     color: $bg_color;
     display: inline-block;
     font-size: 18px;
-    padding: 19px 110px;
+    padding: 19px 117px;
     text-align: center;
   }
   &__white--small:hover {

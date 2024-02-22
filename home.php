@@ -1,38 +1,39 @@
 <?php /* Template Name: Home */ ?>
 <?php get_header(); ?>
-<?php while ( have_posts() ) : the_post(); ?>
-
-    <?php $hero_button_text = get_field('hero_button_text', $post->ID); ?>
-
-<?php endwhile; ?>
 <div class="hero">
     <div class="hero__image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/nowadays-hero-img.png')">
         <div class="hero__image-info">
             <h2>Drink<br>Nowadays</h2>
             <p>Cannabis in a Bottle</p>
-            <a class='btn btn__beige--big' href="#"><?php echo $hero_button_text; ?></a>
+            <a class='btn btn__beige--big' href="#">SHOP NOW</a>
         </div>
     </div>
     <div class="hero__video" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/nowadays-hero-video.png')"></div>
 </div>
 <div class="icons">
-    <div class="icons__icon">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/quick.svg'" alt="icons">
-        <p>Quick<br>Onset time</p>
+    <div class="slider-dots">
+        <div class="icons__icon">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/quick.svg'" alt="icons">
+            <p>Quick<br>Onset time</p>
+        </div>
+        <div class="icons__icon">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/bye.svg'" alt="icons">
+            <p>Bye Bye<br>Hangover</p>
+        </div>
+        <div class="icons__icon">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/drink.svg'" alt="icons">
+            <p>Drink With
+                <br>
+                Friends</p>
+        </div>
+        <div class="icons__icon">
+            <img class="icons__shipping" src="<?php echo get_template_directory_uri(); ?>/img/shipping.svg'">
+            <p>Shipping To<br>Your Door</p>
+        </div>
     </div>
-    <div class="icons__icon">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/bye.svg'" alt="icons">
-        <p>Bye Bye<br>Hangover</p>
-    </div>
-    <div class="icons__icon">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/drink.svg'" alt="icons">
-        <p>Drink With
-            <br>
-            Friends</p>
-    </div>
-    <div class="icons__icon">
-        <img class="icons__shipping" src="<?php echo get_template_directory_uri(); ?>/img/shipping.svg'">
-        <p>Shipping To<br>Your Door</p>
+    <div class="slider-dots__buttons">
+        <button id="js-prev-button-dots" class="slider-dots__buttons--left"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Right"> </button>
+        <button id="js-next-button-dots" class="slider-dots__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left"> </button>
     </div>
 </div>
 <div class="animated-text">
@@ -73,7 +74,7 @@
             <h2 class="best-sellers__title title_sm">Shop Nowadays Best Sellers</h2>
             <p class="best-sellers__description">Bright. Buzzy. Balanced</p>
         </div>
-        <div class="best-sellers__products">
+        <div class="best-sellers__products slider">
             <div class="bs-product">
                 <div class="bs-product__image bs-product__one">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/Nowadays_micro_dose.webp'">
@@ -92,7 +93,7 @@
                         <input type="radio" id="star1" name="rating" value="1"/>
                         <label for="star1">&#9733;</label>
                     </div>
-                    <span>67 reviews</span>
+                    <span class="bs-product__span">67 reviews</span>
                     <p class="bs-product__description">2mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/33mg per bottle</p>
                     <p class="bs-product__price">$39.99</p>
@@ -117,7 +118,7 @@
                         <input type="radio" id="star6" name="rating1" value="1"/>
                         <label for="star6">&#9733;</label>
                     </div>
-                    <span>87 reviews</span>
+                    <span class="bs-product__span">87 reviews</span>
                     <p class="bs-product__description">6mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/100mg per bottle</p>
                     <p class="bs-product__price">$59.99</p>
@@ -142,12 +143,20 @@
                         <input type="radio" id="star11" name="rating3" value="1"/>
                         <label for="star11">&#9733;</label>
                     </div>
-                    <span>98 reviews</span>
+                    <span class="bs-product__span">98 reviews</span>
                     <p class="bs-product__description">10mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/166mg per bottle</p>
                     <p class="bs-product__price">$79.99</p>
                     <a href="#" class=" btn btn__beige--small">shop now</a>
                 </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+            <div class="scroll-indicator__buttons">
+                <button id="js-prev-button" class="scroll-indicator__buttons--left disabled"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left" /> </button>
+                <button id="js-next-button" class="scroll-indicator__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Right"> </button>
             </div>
         </div>
     </div>
@@ -184,7 +193,7 @@
     <div class="container">
         <h2>A GOOD TIME IN NO TIME</h2>
         <p class="good-time-section__subtitle">Unwind. Unplift.</p>
-        <div class="good-time-section__products slider">
+        <div class="good-time-section__products slider1">
             <div class="good-time-section-product__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/image-2.png' }}"/>
                 <p class="good-time-section-product__card--name">Classic hat</p>
@@ -217,11 +226,11 @@
             </div>
         </div>
         <div class="scroll-indicator">
-            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress1" role="progressbar" aria-valuemin="0" aria-valuemax="100">
             </div>
             <div class="scroll-indicator__buttons">
-                <button id="js-prev-button" class="scroll-indicator__buttons--left disabled"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left" /> </button>
-                <button id="js-next-button" class="scroll-indicator__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Right"> </button>
+                <button id="js-prev-button1" class="scroll-indicator__buttons--left disabled"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left" /> </button>
+                <button id="js-next-button1" class="scroll-indicator__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Right"> </button>
             </div>
         </div>
         <div class="good-time-section__button-container">
@@ -242,7 +251,7 @@
             </div>
 
         </div>
-        <div class="more-ways-section__products">
+        <div class="more-ways-section__products slider2">
             <div class="more-ways-section__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
                 <p class="more-ways-section__card--name">PUCKER UP</p>
@@ -266,6 +275,26 @@
                 <p class="more-ways-section__card--name">PUCKER UP</p>
                 <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
                 <button class="more-ways-section__card--button">VIEW MORE</button>
+            </div>
+            <div class="more-ways-section__card">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
+                <p class="more-ways-section__card--name">PUCKER UP</p>
+                <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
+                <button class="more-ways-section__card--button">VIEW MORE</button>
+            </div>
+            <div class="more-ways-section__card">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
+                <p class="more-ways-section__card--name">PUCKER UP</p>
+                <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
+                <button class="more-ways-section__card--button">VIEW MORE</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="progress2" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+            <div class="scroll-indicator__buttons">
+                <button id="js-prev-button2" class="scroll-indicator__buttons--left disabled"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left" /> </button>
+                <button id="js-next-button2" class="scroll-indicator__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Right"> </button>
             </div>
         </div>
         <div class="more-ways-section__button-container">
@@ -276,7 +305,7 @@
 <section class="what-everyone-section">
     <div class="container">
         <h2>WHAT EVERYONE IS SAYING</h2>
-        <div class="what-everyone-section__video-list scroll-content-what-everyone-section">
+        <div class="what-everyone-section__video-list slider3">
             <div class="what-everyone__card">
                 <video autoplay muted width="286" height="545">
                     <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
@@ -296,6 +325,34 @@
                 <video autoplay muted width="286" height="545">
                     <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
                 </video>    
+            </div>
+            <div class="what-everyone__card">
+                <video autoplay muted width="286" height="545">
+                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
+                </video>    
+            </div>
+            <div class="what-everyone__card">
+                <video autoplay muted width="286" height="545">
+                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
+                </video>    
+            </div>
+            <div class="what-everyone__card">
+                <video autoplay muted width="286" height="545">
+                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
+                </video>    
+            </div>
+            <div class="what-everyone__card">
+                <video autoplay muted width="286" height="545">
+                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
+                </video>    
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="progress3" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+            <div class="scroll-indicator__buttons">
+                <button id="js-prev-button3" class="scroll-indicator__buttons--left disabled"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left" /> </button>
+                <button id="js-next-button3" class="scroll-indicator__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Right"> </button>
             </div>
         </div>
         <div class="what-everyone-section__buttons-container">
@@ -312,21 +369,23 @@
                 QUESTIONS?</h3>
 
             <div class="have-questions__accordion">
-                <details>
+                <details name="accordion">
                     <summary>THC? What’s the hype?</summary>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>THC is what gives you that perfect lift. A cannabinoid derived from marijuana or hemp, THC is the secret sauce that gives Nowadays it’s social buzz. Each shot (1.5oz) of Nowadays has 2mg. 6mg, or 10MG of THC to deliver a consistent, controllable high, every single time.</p>
                 </details>
-                <details>
+                <details name="accordion">
                     <summary>Does it taste like Weed?</summary>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Natural fruit flavors, a crisp finish, and absolutely zero cannabis taste. Whether going out or staying in, Nowadays was created with a flavor to assimilate to any occasion.
+
+</p>
                 </details>
-                <details>
+                <details name="accordion">
                     <summary>How Many Can I Drink?</summary>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Designed to replicate the strength of alcohol, we recommend beginners start with a single shot over ice or mix up one of our signature cocktails. Wait 15-30 minutes, and craft your experience from there.</p>
                 </details>
-                <details>
+                <details name="accordion">
                     <summary>Where Can I Find Nowadays?</summary>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Nowadays can be ordered on our website and shipped directly to your door. The product is currently being rolled out to retailers across the country and we will be adding a Find Us page soon to find a store near you!</p>
                 </details>
 
             </div>
