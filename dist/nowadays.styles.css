@@ -579,7 +579,7 @@ header {
   color: #ffffff;
 }
 
-.progress {
+.progress, .progress1, .progress2, .progress3 {
   display: block;
   width: 100%;
   height: 4px;
@@ -592,6 +592,15 @@ header {
   transition: background-size 0.4s ease-in-out;
 }
 
+.progress, .progress2, .progress3 {
+  background-color: rgb(241, 239, 232);
+}
+
+@media (min-width: 768px) {
+  .scroll-indicator:has(.progress3), .scroll-indicator:has(.progress) {
+    display: none;
+  }
+}
 /* Slider */
 .slick-slider {
   position: relative;
@@ -698,6 +707,29 @@ header {
   display: none;
 }
 
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  list-style-type: none;
+}
+.slick-dots li {
+  margin: 0 0.25rem;
+}
+.slick-dots button {
+  display: block;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 100%;
+  background-color: #D7D2CB;
+  text-indent: -9999px;
+}
+.slick-dots li.slick-active button {
+  background-color: #E7B78A;
+}
+
 .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -740,21 +772,22 @@ header {
 }
 
 .icons {
+  position: relative;
   background-color: #fdfbf2;
-  display: grid;
+  /* display: grid;
   gap: 30px;
   grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  padding: 0 170px;
-  padding: 60px 150px;
+  justify-content: center; */
+  /*  padding: 0 170px;
+   padding: 60px 150px; */
 }
-.icons__icon {
-  align-items: center;
+.icons .icons__icon {
   display: flex;
+  align-items: center;
   gap: 30px;
   justify-content: center;
 }
-.icons__icon p {
+.icons .icons__icon p {
   color: #e6b78a;
   font-family: "euclid_circular_amedium", sans-serif;
   font-size: 19px;
@@ -763,10 +796,10 @@ header {
   text-align: center;
   text-transform: uppercase;
 }
-.icons__icon img {
+.icons .icons__icon img {
   height: 62px;
 }
-.icons__icon .icons__shipping {
+.icons .icons__icon .icons__shipping {
   height: 42px;
 }
 
@@ -794,10 +827,10 @@ header {
   text-transform: capitalize;
 }
 .best-sellers__products {
-  display: grid;
+  /* display: grid;
   gap: 30px;
   grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
+  justify-content: center; */
 }
 
 .bs-product {
@@ -812,6 +845,8 @@ header {
   margin-bottom: 24px;
   text-align: center;
   transition: 0.2s linear;
+  display: flex;
+  justify-content: center;
 }
 .bs-product__image img {
   height: 460px;
@@ -988,6 +1023,10 @@ header {
   background-size: cover;
   padding: 60px 0;
 }
+.good-time-section .container {
+  display: flex;
+  flex-direction: column;
+}
 .good-time-section h2 {
   font-family: sans-serif;
   font-size: 48px;
@@ -1001,16 +1040,18 @@ header {
   margin-bottom: 2rem;
 }
 .good-time-section .good-time-section__products {
-  display: flex;
   font-family: sans-serif;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  overflow-x: auto;
   width: 100%;
+}
+.good-time-section .good-time-section__products .good-time-section-product__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
 }
 .good-time-section .good-time-section__products .good-time-section-product__card img {
   margin-bottom: 10px;
-  width: 280px;
+  width: 100%;
 }
 .good-time-section .good-time-section__products .good-time-section-product__card p {
   font-size: 20px;
@@ -1023,7 +1064,7 @@ header {
   border: none;
   height: 48px;
   margin-top: 1rem;
-  width: 286px;
+  width: 100%;
 }
 
 /* scroll indicator */
@@ -1033,25 +1074,11 @@ header {
   justify-content: space-between;
   position: relative;
   gap: 80px;
-}
-.scroll-indicator__empty {
-  background-color: white;
-  width: 195px;
+  margin-top: 2rem;
 }
 .scroll-indicator__buttons {
   display: flex;
   gap: 10px;
-}
-.scroll-indicator__empty, .scroll-indicator__progress {
-  height: 4px;
-  left: 0;
-  position: absolute;
-  top: 23px;
-}
-.scroll-indicator__progress {
-  background-color: #e7b78a;
-  width: 0;
-  z-index: 1;
 }
 .scroll-indicator button {
   background-color: transparent;
@@ -1063,6 +1090,26 @@ header {
   opacity: 0.5;
 }
 .scroll-indicator__buttons--left img {
+  transform: rotate(180deg);
+}
+
+.slider-dots__buttons {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+.slider-dots__buttons--right, .slider-dots__buttons--left {
+  background-color: transparent;
+  height: 48px;
+  width: 48px;
+}
+.slider-dots__buttons--right.disabled, .slider-dots__buttons--left.disabled {
+  opacity: 0.5;
+}
+.slider-dots__buttons--left img {
   transform: rotate(180deg);
 }
 
@@ -1190,9 +1237,6 @@ header {
   margin-top: 2rem;
   width: 325px;
 }
-.more-ways-section .scroll-indicator__empty {
-  background-color: rgb(241, 239, 232);
-}
 
 /* what everyone */
 .what-everyone-section {
@@ -1208,9 +1252,6 @@ header {
   display: flex;
   gap: 2rem;
   overflow-x: auto;
-}
-.what-everyone-section .scroll-indicator__empty {
-  background-color: rgb(241, 239, 232);
 }
 .what-everyone-section__buttons-container {
   align-items: center;
@@ -1536,12 +1577,6 @@ input:focus ~ .highlight {
     justify-content: center;
     text-transform: uppercase;
     width: 100%;
-  }
-  /*
-      Scroll indicator
-  */
-  .scroll-indicator__empty {
-    width: 85%;
   }
   /* 
       more ways section

@@ -1,4 +1,4 @@
-.progress {
+.progress, .progress1, .progress2, .progress3 {
     display: block;
     width: 100%;
     height: 4px;
@@ -10,4 +10,14 @@
     background-size: 0 100%;
     
     transition: background-size .4s ease-in-out;
+  }
+
+  .progress, .progress2, .progress3{
+    background-color: rgba(241, 239, 232, 1);
+  }
+
+  @media (min-width: 768px) {
+    .scroll-indicator:has(.progress3), .scroll-indicator:has(.progress) {
+      display: none;
+    }
   }
