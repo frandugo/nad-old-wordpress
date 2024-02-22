@@ -234,7 +234,7 @@
             </div>
         </div>
         <div class="good-time-section__button-container">
-            <button class="good-time-section__button-container--shop-all">SHOP ALL</button>
+            <a href="#" class=" btn btn__white--small">Shop all</a>
         </div>
     </div>
 </section>
@@ -308,22 +308,22 @@
         <div class="what-everyone-section__video-list slider3">
             <div class="what-everyone__card">
                 <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
+                    <source src="<?php echo get_template_directory_uri(); ?>/img/tiktok.mp4' }}" type="video/mp4">
                 </video>    
             </div>
             <div class="what-everyone__card">
                 <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
+                    <source src="<?php echo get_template_directory_uri(); ?>/img/tiktok.mp4' }}" type="video/mp4">
                 </video>    
             </div>
             <div class="what-everyone__card">
                 <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
+                    <source src="<?php echo get_template_directory_uri(); ?>/img/tiktok.mp4' }}" type="video/mp4">
                 </video>    
             </div>
             <div class="what-everyone__card">
                 <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
+                    <source src="<?php echo get_template_directory_uri(); ?>/img/tiktok.mp4' }}" type="video/mp4">
                 </video>    
             </div>
             <div class="what-everyone__card">

@@ -584,7 +584,7 @@ header {
 .btn__beige--small {
   display: inline-block;
   font-size: 20px;
-  padding: 19px 110px;
+  padding: 13px 40px;
 }
 .btn__beige--small:hover {
   background: #101010;
@@ -596,7 +596,7 @@ header {
   color: #31374F;
   display: inline-block;
   font-size: 18px;
-  padding: 19px 117px;
+  padding: 18px 117px;
   text-align: center;
 }
 .btn__white--small:hover {
@@ -1043,7 +1043,7 @@ header {
 .media-testimonials-container {
   background: #fafafa;
   overflow: hidden;
-  padding: 40px 112px;
+  padding: 80px 112px 38px;
   width: 100%;
 }
 .media-testimonials-container h2 {
@@ -1052,7 +1052,7 @@ header {
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 0em;
-  margin-bottom: 38px;
+  margin-bottom: 0px;
   text-align: center;
 }
 .media-testimonials-container .media-testimonials {
@@ -1111,7 +1111,7 @@ header {
   border: none;
   margin-bottom: 10px;
   transition: border-color 0.3s ease;
-  width: 100%;
+  width: 284px;
 }
 .good-time-section .good-time-section__products .good-time-section-product__card img:hover {
   border: 4px solid #e6b78a;
@@ -1128,7 +1128,7 @@ header {
   border: none;
   height: 48px;
   margin-top: 1rem;
-  width: 100%;
+  width: 284px;
 }
 .good-time-section .good-time-section__products .good-time-section-product__card button:hover {
   background-color: #101010;
@@ -1537,9 +1537,9 @@ header {
   background-color: #e7b78a;
   border: none;
   font-weight: 500;
-  height: 48px;
+  height: 56px;
   margin-top: 1rem;
-  width: 325px;
+  width: 408px;
 }
 
 /* input */
@@ -1826,4 +1826,284 @@ footer {
     text-align: center;
     padding: 12px 0;
   }
+}
+.plp-hero {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 320px 0 70px;
+}
+.plp-hero h2 {
+  color: #ffffff;
+  font-family: "EuclidFlexMedium";
+  font-size: 88px;
+  font-weight: 500;
+  letter-spacing: 2.506000042px;
+  line-height: 84px;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .plp-hero h2 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+.shop-nowadays {
+  background: #ffffff;
+  padding-bottom: 30px;
+  padding-top: 108px;
+}
+.shop-nowadays__head {
+  margin-bottom: 60px;
+}
+.shop-nowadays__title {
+  font-family: "EuclidFlexMedium";
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.shop-nowadays__description {
+  color: #31374F;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.shop-nowadays__products {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+}
+
+.sn-product {
+  text-align: center;
+  text-transform: uppercase;
+}
+.sn-product__title {
+  font-family: "EuclidFlexMedium";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  text-align: center;
+  line-height: 0;
+  color: #101010;
+}
+.sn-product__image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 86%;
+  margin-bottom: 64px;
+  text-align: center;
+  transition: 0.2s linear;
+  display: flex;
+  justify-content: center;
+}
+.sn-product__image img {
+  height: 460px;
+}
+.sn-product .sn-product__infocards {
+  height: 100%;
+}
+.sn-product__one:hover {
+  background-image: url(06c66f3976d5042d7029.png);
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.sn-product__two:hover {
+  background-image: url(0bc8f2e578f9adc72994.png);
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.sn-product__three:hover {
+  background-image: url(d8e2630fd491d5a7c117.png);
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.sn-product__reviews {
+  direction: rtl;
+  display: inline-block;
+  margin-right: 3px;
+  unicode-bidi: bidi-override;
+}
+.sn-product__reviews input {
+  display: none;
+}
+.sn-product__reviews label {
+  color: #31374F;
+  cursor: pointer;
+  font-size: 20px;
+}
+.sn-product__reviews input:checked ~ label {
+  color: #efba87;
+}
+.sn-product__span {
+  display: inline-block;
+  font-family: "euclid_circular_alight";
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 23px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.sn-product__description, .sn-product__bottle {
+  font-family: "euclid_circular_alight";
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 23px;
+  text-align: center;
+}
+.sn-product__title, .sn-product__reviews, .sn-product__bottle {
+  margin-bottom: 6px;
+}
+.sn-product__price {
+  font-family: "EuclidFlexMedium";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 25px;
+  text-align: center;
+  color: #101010;
+  padding: 16px 0 18px 0;
+}
+
+.shop-all {
+  margin-bottom: 46px;
+  text-align: center;
+}
+
+.merch {
+  background: #ffffff;
+  padding-bottom: 30px;
+  padding-top: 108px;
+}
+.merch__head {
+  margin-bottom: 60px;
+}
+.merch__title {
+  font-family: "EuclidFlexMedium";
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.merch__description {
+  color: #31374F;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.merch__products {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+}
+
+.merch-product {
+  text-align: center;
+  text-transform: uppercase;
+}
+.merch-product__title {
+  font-family: "EuclidFlexMedium";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  text-align: center;
+  line-height: 0;
+  color: #101010;
+}
+.merch-product__image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 86%;
+  margin-bottom: 64px;
+  text-align: center;
+  transition: 0.2s linear;
+  display: flex;
+  justify-content: center;
+}
+.merch-product__image img {
+  height: 460px;
+}
+.merch-product .merch-product__infocards {
+  height: 100%;
+}
+.merch-product__one:hover {
+  background-image: url(06c66f3976d5042d7029.png);
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.merch-product__two:hover {
+  background-image: url(0bc8f2e578f9adc72994.png);
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.merch-product__three:hover {
+  background-image: url(d8e2630fd491d5a7c117.png);
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.merch-product__reviews {
+  direction: rtl;
+  display: inline-block;
+  margin-right: 3px;
+  unicode-bidi: bidi-override;
+}
+.merch-product__reviews input {
+  display: none;
+}
+.merch-product__reviews label {
+  color: #31374F;
+  cursor: pointer;
+  font-size: 20px;
+}
+.merch-product__reviews input:checked ~ label {
+  color: #efba87;
+}
+.merch-product__span {
+  display: inline-block;
+  font-family: "euclid_circular_alight";
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 23px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.merch-product__description, .merch-product__bottle {
+  font-family: "euclid_circular_alight";
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 23px;
+  text-align: center;
+}
+.merch-product__title, .merch-product__reviews, .merch-product__bottle {
+  margin-bottom: 6px;
+}
+.merch-product__price {
+  font-family: "EuclidFlexMedium";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 25px;
+  text-align: center;
+  color: #101010;
+  padding: 16px 0 18px 0;
+}
+
+.shop-all {
+  margin-bottom: 46px;
+  text-align: center;
 }

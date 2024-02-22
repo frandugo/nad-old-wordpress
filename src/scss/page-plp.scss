@@ -1,0 +1,307 @@
+.plp-hero {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 320px 0 70px;
+  h2 {
+    color: $white;
+    font-family: "EuclidFlexMedium";
+    font-size: 88px;
+    font-weight: 500;
+    letter-spacing: 2.50600004196167px;
+    line-height: 84px;
+    text-align: left;
+    text-transform: uppercase;
+    @media (max-width: 768px) {
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+}
+.shop-nowadays {
+  background: #ffffff;
+  padding-bottom: 30px;
+  padding-top: 108px;
+
+  &__head {
+    margin-bottom: 60px;
+  }
+  &__title {
+    font-family: "EuclidFlexMedium";
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    line-height: 0px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  &__description {
+    color: $bg_color;
+    font-size: 30px;
+    font-weight: $normal;
+    text-transform: capitalize;
+  }
+  &__products {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+  }
+}
+
+.sn-product {
+  text-align: center;
+  text-transform: uppercase;
+  &__title {
+    font-family: "EuclidFlexMedium";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: center;
+    line-height: 0;
+    color: #101010;
+  }
+
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 86%;
+    margin-bottom: 64px;
+    text-align: center;
+    transition: 0.2s linear;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 460px;
+    }
+  }
+  .sn-product__infocards {
+    height: 100%;
+  }
+  &__one {
+    &:hover {
+      background-image: url("/img/Bg-micro.png");
+      cursor: pointer;
+      transition: 0.2s linear;
+    }
+  }
+  &__two {
+    &:hover {
+      background-image: url("/img/Bg-low.png");
+      cursor: pointer;
+      transition: 0.2s linear;
+    }
+  }
+  &__three {
+    &:hover {
+      background-image: url("/img/Bg-high.png");
+      cursor: pointer;
+      transition: 0.2s linear;
+    }
+  }
+
+  &__reviews {
+    direction: rtl;
+    display: inline-block;
+    margin-right: 3px;
+    unicode-bidi: bidi-override;
+
+    input {
+      display: none;
+    }
+    label {
+      color: $bg_color;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    input:checked ~ label {
+      color: #efba87;
+    }
+  }
+  &__span {
+    display: inline-block;
+    font-family: "euclid_circular_alight";
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 23px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  &__description,
+  &__bottle {
+    font-family: "euclid_circular_alight";
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 23px;
+    text-align: center;
+  }
+
+  &__title,
+  &__reviews,
+  &__bottle {
+    margin-bottom: 6px;
+  }
+  &__price {
+    font-family: "EuclidFlexMedium";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    line-height: 25px;
+    text-align: center;
+    color: #101010;
+    padding: 16px 0 18px 0;
+  }
+}
+
+.shop-all {
+  margin-bottom: 46px;
+  text-align: center;
+}
+
+// section merch
+
+.merch {
+  background: #ffffff;
+  padding-bottom: 30px;
+  padding-top: 108px;
+
+  &__head {
+    margin-bottom: 60px;
+  }
+  &__title {
+    font-family: "EuclidFlexMedium";
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    line-height: 0px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  &__description {
+    color: $bg_color;
+    font-size: 30px;
+    font-weight: $normal;
+    text-transform: capitalize;
+  }
+  &__products {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+  }
+}
+
+.merch-product {
+  text-align: center;
+  text-transform: uppercase;
+  &__title {
+    font-family: "EuclidFlexMedium";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: center;
+    line-height: 0;
+    color: #101010;
+  }
+
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 86%;
+    margin-bottom: 64px;
+    text-align: center;
+    transition: 0.2s linear;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 460px;
+    }
+  }
+  .merch-product__infocards {
+    height: 100%;
+  }
+  &__one {
+    &:hover {
+      background-image: url("/img/Bg-micro.png");
+      cursor: pointer;
+      transition: 0.2s linear;
+    }
+  }
+  &__two {
+    &:hover {
+      background-image: url("/img/Bg-low.png");
+      cursor: pointer;
+      transition: 0.2s linear;
+    }
+  }
+  &__three {
+    &:hover {
+      background-image: url("/img/Bg-high.png");
+      cursor: pointer;
+      transition: 0.2s linear;
+    }
+  }
+
+  &__reviews {
+    direction: rtl;
+    display: inline-block;
+    margin-right: 3px;
+    unicode-bidi: bidi-override;
+
+    input {
+      display: none;
+    }
+    label {
+      color: $bg_color;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    input:checked ~ label {
+      color: #efba87;
+    }
+  }
+  &__span {
+    display: inline-block;
+    font-family: "euclid_circular_alight";
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 23px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  &__description,
+  &__bottle {
+    font-family: "euclid_circular_alight";
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 23px;
+    text-align: center;
+  }
+
+  &__title,
+  &__reviews,
+  &__bottle {
+    margin-bottom: 6px;
+  }
+  &__price {
+    font-family: "EuclidFlexMedium";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    line-height: 25px;
+    text-align: center;
+    color: #101010;
+    padding: 16px 0 18px 0;
+  }
+}
+
+.shop-all {
+  margin-bottom: 46px;
+  text-align: center;
+}
