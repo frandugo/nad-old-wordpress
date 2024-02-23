@@ -97,7 +97,7 @@
                     <p class="bs-product__description">2mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/33mg per bottle</p>
                     <p class="bs-product__price">$39.99</p>
-                    <a href="#" class=" btn btn__beige--small">shop now</a>
+                    <a href="#" class=" btn btn__beige--medium">shop now</a>
                 </div>
             </div>
             <div class="bs-product">
@@ -122,7 +122,7 @@
                     <p class="bs-product__description">6mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/100mg per bottle</p>
                     <p class="bs-product__price">$59.99</p>
-                    <a href="#" class=" btn btn__beige--small">shop now</a>
+                    <a href="#" class=" btn btn__beige--medium">shop now</a>
                 </div>
             </div>
             <div class="bs-product">
@@ -147,7 +147,7 @@
                     <p class="bs-product__description">10mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/166mg per bottle</p>
                     <p class="bs-product__price">$79.99</p>
-                    <a href="#" class=" btn btn__beige--small">shop now</a>
+                    <a href="#" class=" btn btn__beige--medium">shop now</a>
                 </div>
             </div>
         </div>

@@ -12,10 +12,21 @@
     background: $black;
     color: $white;
   }
+  &__beige--medium {
+    display: inline-block;
+    font-size: 20px;
+    padding: 18px 40px;
+    width: 80%;
+  }
+  &__beige--medium:hover {
+    background: $black;
+    color: $white;
+  }
   &__beige--small {
     display: inline-block;
     font-size: 20px;
     padding: 13px 40px;
+    width: 100%;
   }
   &__beige--small:hover {
     background: $black;
