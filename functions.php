@@ -10,8 +10,8 @@ function my_theme_enqueue_styles()
 	wp_enqueue_style('style', get_template_directory_uri() . 'style.css');
 	wp_enqueue_style('style-nowadays', get_template_directory_uri() . '/dist/nowadays.styles.css');
 
-    wp_enqueue_script('sliders', get_template_directory_uri() . '/src/js/slick.js', array('jquery'), '1.0.2', true);
-    wp_enqueue_script('slick-slider', get_template_directory_uri() . '/src/js/sliders.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('slick-slider', get_template_directory_uri() . '/src/js/slick.js', array('jquery'), '1.0.2', true);
+    wp_enqueue_script('scripts', get_template_directory_uri() . '/src/js/scripts.js', array('jquery'), '1.0.0', true);
 
 	wp_enqueue_script('script-nowadays', get_template_directory_uri() . '/dist/nowadays.scripts.js', array('jquery'), '1.0.2', true);
 }

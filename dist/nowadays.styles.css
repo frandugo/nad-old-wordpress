@@ -132,6 +132,10 @@ table {
   line-height: 46px;
 }
 
+.title_sm {
+  font-family: "euclid_circular_aregular";
+}
+
 .nav_text, .nav__link {
   font-family: "euclid_circular_amedium", sans-serif;
   font-size: 0.889rem;
@@ -340,10 +344,6 @@ table {
   border: none;
 }
 
-.hdr__logo-link {
-  width: 540px;
-}
-
 .main-menu {
   width: 100%;
 }
@@ -368,6 +368,9 @@ header {
   z-index: 10000;
   position: fixed;
   width: 100%;
+}
+header.sticky {
+  background-color: #101010;
 }
 
 .nav__items {
@@ -816,12 +819,7 @@ header {
 .icons {
   position: relative;
   background-color: #fdfbf2;
-  /* display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center; */
-  /*  padding: 0 170px;
-  padding: 60px 150px; */
+  padding: 20px 0;
 }
 .icons .icons__icon {
   display: flex;

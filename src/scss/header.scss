@@ -3,6 +3,9 @@ header {
   z-index: 10000;
   position: fixed;
   width: 100%;
+  &.sticky {
+    background-color: $black;
+  }
 }
 .nav__items {
   align-items: center;
