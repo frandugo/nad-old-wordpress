@@ -24,7 +24,24 @@ function initializeSlider(
 
   $slider.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
     const calc = (nextSlide / (slick.slideCount - 1)) * 100;
+    if(calc > 0){
+      jQuery(`#${arrowSelectors.prev}`).removeClass("disabled");
+      jQuery(`#${arrowSelectors.prev}`).attr("disabled", false);
 
+
+      if(calc === 100){
+        jQuery(`#${arrowSelectors.next}`).addClass("disabled");
+        jQuery(`#${arrowSelectors.next}`).attr("disabled", true);
+      }else{
+        jQuery(`#${arrowSelectors.next}`).attr("disabled", false);
+        jQuery(`#${arrowSelectors.next}`).removeClass("disabled");
+      }
+    }
+    else{
+      jQuery(`#${arrowSelectors.prev}`).addClass("disabled");
+      jQuery(`#${arrowSelectors.prev}`).attr("disabled", true);
+
+    }
     $progressBar
       .css("background-size", calc + "% 100%")
       .attr("aria-valuenow", calc);
@@ -69,6 +86,31 @@ function initializeDotsSlider(sliderSelector, slidesToShow) {
       },
     ],
   });
+  toggleSlickDotsArrows()
+
+  $slider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
+    toggleSlickDotsArrows();
+  });
+
+}
+
+function toggleSlickDotsArrows(){
+  const slickDots = document.querySelector(".slick-dots");
+    
+      if(slickDots.children[0].className === "slick-active"){
+        jQuery("#js-prev-button-dots").hide();
+        jQuery(".slider-dots__buttons").css("justify-content", "flex-end");
+      }else if(slickDots.children[0].className !== "slick-active"){
+        jQuery("#js-prev-button-dots").show();
+        jQuery(".slider-dots__buttons").css("justify-content", "space-between");
+
+      }
+      if(slickDots.children[3].className === "slick-active" ){
+        jQuery("#js-next-button-dots").hide();
+      }else if(slickDots.children[3].className !== "slick-active"){
+        jQuery("#js-next-button-dots").show();
+      } 
+  
 }
   
 // Usage

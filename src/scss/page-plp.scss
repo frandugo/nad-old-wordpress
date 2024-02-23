@@ -24,7 +24,12 @@
   background: #ffffff;
   padding-bottom: 30px;
   padding-top: 108px;
+  margin-bottom: 84px;
 
+  @media (max-width: 768px) {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
   &__head {
     margin-bottom: 60px;
   }
@@ -48,6 +53,9 @@
     gap: 32px;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 
@@ -153,7 +161,7 @@
     line-height: 25px;
     text-align: center;
     color: #101010;
-    padding: 16px 0 18px 0;
+    padding: 16px 0 4px 0;
   }
 }
 
@@ -167,10 +175,32 @@
 .merch {
   background: #ffffff;
   padding-bottom: 30px;
-  padding-top: 108px;
+  select {
+    padding: 14px 76px;
+    option {
+      font-size: 20px;
+    }
+  }
+
+  &-box6 {
+    order: -1;
+  }
+  &-box8 {
+    order: -2;
+  }
+  @media (max-width: 768px) {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  &__select {
+    border: 2px solid #2d2926;
+  }
 
   &__head {
     margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
   }
   &__title {
     font-family: "EuclidFlexMedium";
@@ -192,6 +222,32 @@
     gap: 32px;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    &-box1 {
+      order: -1;
+    }
+    &-box4 {
+      order: -1;
+    }
+    &-box6 {
+      order: -2;
+    }
+    &-box8 {
+      order: -2;
+    }
+  }
+}
+
+.merch-reverse {
+  margin-bottom: 88px;
+  @media (max-width: 768px) {
+    padding-left: 22px;
+    padding-right: 22px;
   }
 }
 
@@ -209,40 +265,8 @@
   }
 
   &__image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 86%;
-    margin-bottom: 64px;
-    text-align: center;
-    transition: 0.2s linear;
-    display: flex;
-    justify-content: center;
     img {
-      height: 460px;
-    }
-  }
-  .merch-product__infocards {
-    height: 100%;
-  }
-  &__one {
-    &:hover {
-      background-image: url("/img/Bg-micro.png");
-      cursor: pointer;
-      transition: 0.2s linear;
-    }
-  }
-  &__two {
-    &:hover {
-      background-image: url("/img/Bg-low.png");
-      cursor: pointer;
-      transition: 0.2s linear;
-    }
-  }
-  &__three {
-    &:hover {
-      background-image: url("/img/Bg-high.png");
-      cursor: pointer;
-      transition: 0.2s linear;
+      margin-bottom: 33px;
     }
   }
 
