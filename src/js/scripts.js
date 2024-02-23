@@ -8,8 +8,7 @@ function stickyHeader() {
         jQuery('header').removeClass("sticky");  
       }  
     }); 
-} 
-
+}
 
 function initializeSlider(
   sliderSelector,
@@ -56,13 +55,39 @@ function initializeSlider(
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 500,
+        breakpoint: 1008,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
     ],
+  });
+}
+
+function initializeCarousel(sliderSelector) {
+  const $slider = jQuery(sliderSelector);
+  $slider.slick({
+    dots: false,
+    prevArrow: false,
+    nextArrow: false,
+    speed: 400,
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    variableWidth: true,
+    adaptiveHeight: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: false,
+    swipeToSlide: false,
   });
 }
   
@@ -78,7 +103,7 @@ function initializeDotsSlider(sliderSelector, slidesToShow) {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 500,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -86,12 +111,33 @@ function initializeDotsSlider(sliderSelector, slidesToShow) {
       },
     ],
   });
-  toggleSlickDotsArrows()
+  // toggleSlickDotsArrows()
 
-  $slider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
-    toggleSlickDotsArrows();
+  // $slider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
+  //   toggleSlickDotsArrows();
+  // });
+
+}
+
+function initializeCategorySlider(sliderSelector) {
+  const $slider = jQuery(sliderSelector);
+  $slider.slick({
+    speed: 400,
+    dots: false,
+    prevArrow: false,
+    nextArrow: false,
+    slidesToShow: 4.5,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   });
-
 }
 
 function toggleSlickDotsArrows(){
@@ -109,8 +155,18 @@ function toggleSlickDotsArrows(){
         jQuery("#js-next-button-dots").hide();
       }else if(slickDots.children[3].className !== "slick-active"){
         jQuery("#js-next-button-dots").show();
-      } 
-  
+      }
+}
+
+function menuMobile() {
+  jQuery(".js-menu-mobile__open").click(function (e) {
+    e.preventDefault();
+    jQuery(".js-menu-mobile__list").addClass("open");
+  });
+  jQuery(".js-menu-mobile__close").click(function (e) {
+    e.preventDefault();
+    jQuery(".js-menu-mobile__list").removeClass("open");
+  });
 }
   
 // Usage
@@ -144,5 +200,10 @@ jQuery(document).ready(function () {
     4
   );
   initializeDotsSlider(".slider-dots", 4);
+  initializeCategorySlider(".slider-category");
+
+  initializeCarousel('.js-media-testimonials')
+
   stickyHeader();
+  menuMobile();
 });

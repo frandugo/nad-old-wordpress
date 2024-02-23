@@ -1,11 +1,43 @@
 <?php /* Template Name: Home */ ?>
 <?php get_header(); ?>
+<section class="home-mobile-categories slider-category">
+    <div class="category">
+        <div class="category__image">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/category.jpg'">
+        </div>
+        <h3>Best Sellers</h3>
+    </div>
+    <div class="category">
+        <div class="category__image">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/category.jpg'">
+        </div>
+        <h3>Best Sellers</h3>
+    </div>
+    <div class="category">
+        <div class="category__image">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/category.jpg'">
+        </div>
+        <h3>Best Sellers</h3>
+    </div>
+    <div class="category">
+        <div class="category__image">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/category.jpg'">
+        </div>
+        <h3>Best Sellers</h3>
+    </div>
+    <div class="category">
+        <div class="category__image">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/category.jpg'">
+        </div>
+        <h3>Best Sellers</h3>
+    </div>
+</section>
 <div class="hero">
     <div class="hero__image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/nowadays-hero-img.png')">
         <div class="hero__image-info">
             <h2>Drink<br>Nowadays</h2>
             <p>Cannabis in a Bottle</p>
-            <a class='btn btn__beige--big' href="#">SHOP NOW</a>
+            <a class='btn btn__beige btn__big btn__uppercase' href="#">Shop now</a>
         </div>
     </div>
     <div class="hero__video" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/nowadays-hero-video.png')"></div>
@@ -97,7 +129,7 @@
                     <p class="bs-product__description">2mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/33mg per bottle</p>
                     <p class="bs-product__price">$39.99</p>
-                    <a href="#" class=" btn btn__beige--medium">shop now</a>
+                    <a href="#" class="btn btn__beige btn__medium bt__full btn__transform">shop now</a>
                 </div>
             </div>
             <div class="bs-product">
@@ -122,7 +154,7 @@
                     <p class="bs-product__description">6mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/100mg per bottle</p>
                     <p class="bs-product__price">$59.99</p>
-                    <a href="#" class=" btn btn__beige--medium">shop now</a>
+                    <a href="#" class="btn btn__beige btn__medium bt__full btn__transform">shop now</a>
                 </div>
             </div>
             <div class="bs-product">
@@ -147,7 +179,7 @@
                     <p class="bs-product__description">10mg thc drink</p>
                     <p class="bs-product__bottle">750 ml/166mg per bottle</p>
                     <p class="bs-product__price">$79.99</p>
-                    <a href="#" class=" btn btn__beige--medium">shop now</a>
+                    <a href="#" class="btn btn__beige btn__medium bt__full btn__transform">shop now</a>
                 </div>
             </div>
         </div>
@@ -162,11 +194,31 @@
     </div>
 </section>
 <div class="shop-all">
-    <a href="#" class=" btn btn__white--small">Shop all</a>
+    <a href="#" class="btn btn__white btn__medium btn__w340 btn__uppercase">Shop all</a>
 </div>
 <section class="media-testimonials-container">
-    <h2>NOWADAYS IN THE PRESS</h2>
-    <div class="media-testimonials">
+    <h2>Nowadays in the press</h2>
+    <div class="media-testimonials js-media-testimonials">
+        <div class="media-testimonials__item">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-6.svg'}}" alt="Press 1" />
+            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
+        </div>
+        <div class="media-testimonials__item">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-4-2.svg'}}" alt="Press 2" />
+            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
+        </div>
+        <div class="media-testimonials__item">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-3-2.svg'}}" alt="Press 3" />
+            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
+        </div>
+        <div class="media-testimonials__item">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-2-2.svg' }}" alt="Press 4" />
+            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
+        </div>
+        <div class="media-testimonials__item">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-1-2.svg'}}" alt="Press 5" />
+            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
+        </div>
         <div class="media-testimonials__item">
             <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-6.svg'}}" alt="Press 1" />
             <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
@@ -191,38 +243,38 @@
 </section>
 <section class="good-time-section">
     <div class="container">
-        <h2>A GOOD TIME IN NO TIME</h2>
+        <h2>A good time in no time</h2>
         <p class="good-time-section__subtitle">Unwind. Unplift.</p>
         <div class="good-time-section__products slider1">
             <div class="good-time-section-product__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/image-2.png' }}"/>
-                <p class="good-time-section-product__card--name">Classic hat</p>
-                <p class="good-time-section-product__card--price">$20.00</p>
-                <button class="good-time-section-product__card--button">SHOP NOW</button>
+                <h2 class="good-time-section-product__title">Classic hat</h2>
+                <p class="good-time-section-product__price">$20.00</p>
+                <button class="btn btn__beige btn__medium btn__full btn__uppercase">Shop now</button>
             </div>
             <div class="good-time-section-product__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/image-2.png' }}"/>
-                <p class="good-time-section-product__card--name">Classic hat</p>
-                <p class="good-time-section-product__card--price">$20.00</p>
-                <button class="good-time-section-product__card--button">SHOP NOW</button>
+                <h2 class="good-time-section-product__title">Classic hat</h2>
+                <p class="good-time-section-product__price">$20.00</p>
+                <button class="btn btn__beige btn__medium btn__full btn__uppercase">Shop now</button>
             </div>
             <div class="good-time-section-product__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/image-2.png' }}"/>
-                <p class="good-time-section-product__card--name">Classic hat</p>
-                <p class="good-time-section-product__card--price">$20.00</p>
-                <button class="good-time-section-product__card--button">SHOP NOW</button>
+                <h2 class="good-time-section-product__title">Classic hat</h2>
+                <p class="good-time-section-product__price">$20.00</p>
+                <button class="btn btn__beige btn__medium btn__full btn__uppercase">Shop now</button>
             </div>
             <div class="good-time-section-product__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/image-2.png' }}"/>
-                <p class="good-time-section-product__card--name">Classic hat</p>
-                <p class="good-time-section-product__card--price">$20.00</p>
-                <button class="good-time-section-product__card--button">SHOP NOW</button>
+                <h2 class="good-time-section-product__title">Classic hat</h2>
+                <p class="good-time-section-product__price">$20.00</p>
+                <button class="btn btn__beige btn__medium btn__full btn__uppercase">Shop now</button>
             </div>
             <div class="good-time-section-product__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/image-2.png' }}"/>
-                <p class="good-time-section-product__card--name">Classic hat</p>
-                <p class="good-time-section-product__card--price">$20.00</p>
-                <button class="good-time-section-product__card--button">SHOP NOW</button>
+                <h2 class="good-time-section-product__title">Classic hat</h2>
+                <p class="good-time-section-product__price">$20.00</p>
+                <button class="btn btn__beige btn__medium btn__full btn__uppercase">Shop now</button>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -234,7 +286,7 @@
             </div>
         </div>
         <div class="good-time-section__button-container">
-            <a href="#" class=" btn btn__white--small">Shop all</a>
+            <a href="#" class="btn btn__white btn__medium btn__w340 btn__uppercase">Shop all</a>
         </div>
     </div>
 </section>
@@ -242,8 +294,7 @@
     <div class="container">
         <div class="more-ways-section__content">
             <div class="more-ways-section__info">
-                <h2>MORE WAYS TO ENJOY<br>
-                    NOWADAYS</h2>
+                <h2>More ways to enjoy<br> Nowdays</h2>
                 <p class="more-ways-section__subtitle">Drinks with THC.</p>
             </div>
             <div class="more-ways-section__image">
@@ -254,39 +305,39 @@
         <div class="more-ways-section__products slider2">
             <div class="more-ways-section__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">PUCKER UP</p>
+                <p class="more-ways-section__card--name">Pucker up</p>
                 <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">VIEW MORE</button>
+                <button class="more-ways-section__card--button">View more</button>
             </div>
             <div class="more-ways-section__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">PUCKER UP</p>
+                <p class="more-ways-section__card--name">Pucker up</p>
                 <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">VIEW MORE</button>
+                <button class="more-ways-section__card--button">View more</button>
             </div>
             <div class="more-ways-section__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">PUCKER UP</p>
+                <p class="more-ways-section__card--name">Pucker up</p>
                 <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">VIEW MORE</button>
+                <button class="more-ways-section__card--button">View more</button>
             </div>
             <div class="more-ways-section__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">PUCKER UP</p>
+                <p class="more-ways-section__card--name">Pucker up</p>
                 <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">VIEW MORE</button>
+                <button class="more-ways-section__card--button">View more</button>
             </div>
             <div class="more-ways-section__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">PUCKER UP</p>
+                <p class="more-ways-section__card--name">Pucker up</p>
                 <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">VIEW MORE</button>
+                <button class="more-ways-section__card--button">View more</button>
             </div>
             <div class="more-ways-section__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">PUCKER UP</p>
+                <p class="more-ways-section__card--name">Pucker up</p>
                 <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">VIEW MORE</button>
+                <button class="more-ways-section__card--button">View more</button>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -310,30 +361,6 @@
                 <video autoplay muted width="286" height="545">
                     <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
                 </video>    
-            </div>
-            <div class="what-everyone__card">
-                <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
-                </video>    
-            </div>
-            <div class="what-everyone__card">
-                <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
-                </video>    
-            </div>
-            <div class="what-everyone__card">
-                <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/ssstik.io_1708112788862.mp4' }}" type="video/mp4">
-                </video>    
-            </div>
-            <div class="what-everyone__card">
-                <img  src="<?php echo get_template_directory_uri(); ?>/img/tiktok-example.png' }}"  /> 
-            </div>
-            <div class="what-everyone__card">
-                <img  src="<?php echo get_template_directory_uri(); ?>/img/tiktok-example.png' }}"  /> 
-            </div>
-            <div class="what-everyone__card">
-                <img  src="<?php echo get_template_directory_uri(); ?>/img/tiktok-example.png' }}"  /> 
             </div>
         </div>
         <div class="scroll-indicator">

@@ -1,48 +1,56 @@
 .btn {
-  font-family: "euclid_flex_medium";
-  text-transform: uppercase;
-  background-color: $beige;
-  color: $black;
-  &__beige--big {
-    display: inline-block;
-    font-size: 32px;
-    padding: 20px 136px;
+  cursor: pointer;
+  font-family: $font_family;
+  &__beige{
+    background: $beige;
+    color: $black;
   }
-  &__beige--big:hover {
+  &__beige:hover {
     background: $black;
     color: $white;
   }
-  &__beige--medium {
-    display: inline-block;
-    font-size: 20px;
-    padding: 18px 40px;
-    width: 80%;
+  &__w340{
+    text-align: center;
+    width: 340px;
   }
-  &__beige--medium:hover {
-    background: $black;
-    color: $white;
-  }
-  &__beige--small {
-    display: inline-block;
-    font-size: 20px;
-    padding: 13px 40px;
+  &__full{ 
+    text-align: center;
     width: 100%;
   }
-  &__beige--small:hover {
-    background: $black;
-    color: $white;
+  &__big{
+    font-size: 32px;
+    padding: 15px 100px;
   }
-  &__white--small {
+  &__medium {
+    font-size: 20px;
+    padding: 18px 40px;
+  }
+  &__small {
+    font-size: 20px;
+    padding: 13px 40px;
+  }
+  &__white{
     background: $white;
     border: 2px solid $bg_color;
     color: $bg_color;
-    display: inline-block;
-    font-size: 18px;
-    padding: 18px 117px;
-    text-align: center;
   }
-  &__white--small:hover {
+  &__white:hover {
     background: $black;
     color: $white;
+  }
+  &__uppercase{ text-transform: uppercase; }
+  @media (max-width: 1080px) {
+    &__big{
+      font-size: 24px;
+      padding: 15px 50px;
+    }
+    &__medium {
+      font-size: 18px;
+      padding: 18px 30px;
+    }
+    &__small {
+      font-size: 18px;
+      padding: 13px 30px;
+    }
   }
 }

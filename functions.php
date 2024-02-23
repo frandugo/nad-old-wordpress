@@ -11,7 +11,7 @@ function my_theme_enqueue_styles()
 	wp_enqueue_style('style-nowadays', get_template_directory_uri() . '/dist/nowadays.styles.css');
 
     wp_enqueue_script('slick-slider', get_template_directory_uri() . '/src/js/slick.js', array('jquery'), '1.0.2', true);
-    wp_enqueue_script('scripts', get_template_directory_uri() . '/src/js/scripts.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('scripts', get_template_directory_uri() . '/src/js/scripts.js', array('jquery'), '1.0.10', true);
 
 	wp_enqueue_script('script-nowadays', get_template_directory_uri() . '/dist/nowadays.scripts.js', array('jquery'), '1.0.2', true);
 }
@@ -25,6 +25,7 @@ function register_my_menus()
 			'header-menu' => __('Header Menu'),
 			'menu-left' => __('Menu Left'),
 			'menu-right' => __('Menu Right'),
+			'menu-mobile' => __('Menu Mobile'),
 			'footer-first' => __('Footer First'),
 			'footer-secondary' => __('Footer Secondary'),
 			'extra-menu' => __('Extra Menu')

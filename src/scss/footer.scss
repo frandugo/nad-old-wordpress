@@ -11,21 +11,17 @@ footer {
   display: flex;
   gap: 120px;
   text-transform: uppercase;
-
-  &__left {
-    a {
-      color: $white;
-      display: inline-block;
-      margin-bottom: 16px;
-    }
-  }
-}
-
-.footer-links__rigth {
   a {
     color: $white;
     display: inline-block;
     margin-bottom: 16px;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+    gap: 40px;
+    a{
+      margin-bottom: 12px;
+    }
   }
 }
 .footer__copyright {
