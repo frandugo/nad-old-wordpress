@@ -193,9 +193,9 @@
         </div>
     </div>
 </section>
-<div class="shop-all">
+<section class="shop-all-button">
     <a href="#" class="btn btn__white btn__medium btn__w340 btn__uppercase">Shop all</a>
-</div>
+</section>
 <section class="media-testimonials-container">
     <h2>Nowadays in the press</h2>
     <div class="media-testimonials js-media-testimonials">
@@ -241,7 +241,7 @@
         </div>
     </div>
 </section>
-<section class="good-time-section">
+<section class="good-time">
     <div class="container">
         <h2>A good time in no time</h2>
         <p class="good-time-section__subtitle">Unwind. Unplift.</p>
@@ -285,59 +285,28 @@
                 <button id="js-next-button1" class="scroll-indicator__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Right"> </button>
             </div>
         </div>
-        <div class="good-time-section__button-container">
+        <section class="shop-all-button">
             <a href="#" class="btn btn__white btn__medium btn__w340 btn__uppercase">Shop all</a>
-        </div>
+        </section>
     </div>
 </section>
-<section class="more-ways-section">
+<section class="more-ways">
     <div class="container">
-        <div class="more-ways-section__content">
-            <div class="more-ways-section__info">
+        <div class="more-ways__head">
+            <div class="more-ways__info">
                 <h2>More ways to enjoy<br> Nowdays</h2>
-                <p class="more-ways-section__subtitle">Drinks with THC.</p>
+                <p class="more-ways__subtitle">Drinks with THC.</p>
             </div>
-            <div class="more-ways-section__image">
+            <div class="more-ways__image">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/nowadays-rotate.png'" alt="img">
             </div>
-
         </div>
-        <div class="more-ways-section__products slider2">
-            <div class="more-ways-section__card">
+        <div class="more-ways__products slider2">
+            <div class="more-ways__card">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">Pucker up</p>
-                <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">View more</button>
-            </div>
-            <div class="more-ways-section__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">Pucker up</p>
-                <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">View more</button>
-            </div>
-            <div class="more-ways-section__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">Pucker up</p>
-                <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">View more</button>
-            </div>
-            <div class="more-ways-section__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">Pucker up</p>
-                <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">View more</button>
-            </div>
-            <div class="more-ways-section__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">Pucker up</p>
-                <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">View more</button>
-            </div>
-            <div class="more-ways-section__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways-section__card--name">Pucker up</p>
-                <p class="more-ways-section__card--description">Just enough tartness to keep you coming back for more</p>
-                <button class="more-ways-section__card--button">View more</button>
+                <p class="more-ways__card--name">Pucker up</p>
+                <p class="more-ways__card--description">Just enough tartness to keep you coming back for more</p>
+                <button class="more-ways__card--button">View more</button>
             </div>
         </div>
         <div class="scroll-indicator">

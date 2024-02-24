@@ -763,6 +763,12 @@ header.sticky {
     display: none;
   }
 }
+.shop-all-button {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
 /* Slider */
 .slick-slider {
   position: relative;
@@ -1165,11 +1171,6 @@ header.sticky {
   padding: 16px 0 18px 0;
 }
 
-.shop-all {
-  padding: 40px 0;
-  text-align: center;
-}
-
 .hero-options {
   align-items: center;
   background-color: #f1efe8;
@@ -1281,69 +1282,69 @@ header.sticky {
 }
 
 /* good time section */
-.good-time-section {
+.good-time {
   background-image: url(9a8cddb72d0aef654a0d.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 112px 0 60px 0;
 }
-.good-time-section .container {
+.good-time .container {
   display: flex;
   flex-direction: column;
 }
-.good-time-section h2 {
+.good-time h2 {
   font-family: "euclid_circular_amedium", sans-serif;
   font-size: 48px;
   line-height: 2;
   text-transform: uppercase;
 }
-.good-time-section__subtitle {
+.good-time__subtitle {
   color: #101010;
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 2rem;
 }
-.good-time-section .good-time-section__products {
+.good-time .good-time-section__products {
   font-family: sans-serif;
   width: 100%;
 }
-.good-time-section .good-time-section__products .good-time-section-product__card {
+.good-time .good-time-section__products .good-time-section-product__card {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-right: 20px;
 }
-.good-time-section .good-time-section__products .good-time-section-product__card img {
+.good-time .good-time-section__products .good-time-section-product__card img {
   border: none;
   margin-bottom: 1.5rem;
   transition: border-color 0.3s ease;
   width: 284px;
 }
-.good-time-section .good-time-section__products .good-time-section-product__card img:hover {
+.good-time .good-time-section__products .good-time-section-product__card img:hover {
   border: 4px solid #e6b78a;
   transition: 0.2s all;
 }
-.good-time-section .good-time-section__products .good-time-section-product__title {
+.good-time .good-time-section__products .good-time-section-product__title {
   font-size: 20px;
   line-height: 25.36px;
   margin-bottom: 10px;
   text-align: center;
 }
-.good-time-section .good-time-section__products .good-time-section-product__price {
+.good-time .good-time-section__products .good-time-section-product__price {
   font-size: 20px;
   font-family: "euclid_circular_amedium", sans-serif;
   line-height: 25.36px;
   margin-bottom: 10px;
   text-align: center;
 }
-.good-time-section .good-time-section__products .good-time-section-product__add-to-cart {
+.good-time .good-time-section__products .good-time-section-product__add-to-cart {
   background-color: #e7b78a;
   border: none;
   height: 48px;
   text-transform: uppercase;
   width: 100%;
 }
-.good-time-section .good-time-section__products .good-time-section-product__add-to-cart:hover {
+.good-time .good-time-section__products .good-time-section-product__add-to-cart:hover {
   background-color: #101010;
   color: #ffffff;
 }
@@ -1398,135 +1399,58 @@ header.sticky {
   transform: rotate(180deg);
 }
 
-.good-time-section__button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-.good-time-section__button-container--shop-all {
-  background-color: rgb(255, 255, 255);
-  border: 2px solid black;
-  color: black;
-  height: 48px;
-  width: 325px;
-}
-.good-time-section__button-container--shop-all:hover {
-  background-color: #101010;
-  color: #ffffff;
-}
-
 /* here to top */
-/* more ways section */
-.more-cards {
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  margin-bottom: 40px;
-}
-.more-cards__image img {
-  height: 390px;
-  margin-bottom: 30px;
-}
-.more-cards__info h4 {
-  font-family: "Euclid Flex";
-  font-size: 28px;
-  font-weight: 500;
-  letter-spacing: 0em;
-  line-height: 36px;
-  margin-bottom: 10px;
-  text-align: center;
-  text-transform: uppercase;
-}
-.more-cards__info p {
-  text-align: center;
-}
-.more-cards__card {
-  position: relative;
-  width: 390px;
-}
-.more-cards__overlay {
-  align-items: center;
-  background: #31374F;
-  display: flex;
-  height: 390px;
-  justify-content: center;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 390px;
-}
-.more-cards__overlay:hover {
-  opacity: 0.6;
-}
-.more-cards__action {
-  text-align: center;
-}
-
-.more-ways-section {
+.more-ways {
   padding: 60px 0;
 }
-.more-ways-section__content {
+.more-ways__head {
   display: flex;
   justify-content: space-between;
 }
-.more-ways-section__info {
+.more-ways__info {
   line-height: 36px;
 }
-.more-ways-section h2 {
-  font-family: "Euclid Flex";
+.more-ways__info h2 {
+  font-family: "euclid_circular_amedium", sans-serif;
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 48px;
   text-align: left;
 }
-.more-ways-section__subtitle {
-  font-family: Elicit Script;
+.more-ways__info p {
+  font-family: "euclid_circular_amedium", sans-serif;
   margin-bottom: 2rem;
 }
-.more-ways-section__products {
-  display: flex;
-  gap: 1.5rem;
+.more-ways__products {
   margin-bottom: 2rem;
 }
-.more-ways-section__products .more-ways-section__card {
+.more-ways__card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 2rem;
+  width: 300px !important;
 }
-.more-ways-section__products .more-ways-section__card img {
+.more-ways__card img {
   width: 100%;
 }
-.more-ways-section__products .more-ways-section__card--name {
+.more-ways__card--name {
   font-size: 20px;
   font-weight: 500;
   line-height: 25.36px;
   text-align: center;
 }
-.more-ways-section__products .more-ways-section__card--description {
+.more-ways__card--description {
   font-size: 16px;
   font-weight: 400;
   line-height: 20.29px;
   text-align: center;
 }
-.more-ways-section__products .more-ways-section__card button {
-  background-color: rgb(255, 255, 255);
-  border: 2px solid black;
-  color: black;
-  height: 48px;
-}
-.more-ways-section__products .more-ways-section__card button:hover {
-  background-color: #101010;
-  color: #ffffff;
-}
-.more-ways-section__button-container {
+.more-ways__button-container {
   text-align: center;
 }
-.more-ways-section__button-container--submit {
+.more-ways__button-container--submit {
   background-color: rgb(231, 183, 138);
   border: none;
   color: black;
@@ -1535,7 +1459,7 @@ header.sticky {
   margin-top: 2rem;
   width: 325px;
 }
-.more-ways-section__button-container--submit:hover {
+.more-ways__button-container--submit:hover {
   background-color: #101010;
   color: #ffffff;
 }
@@ -2206,11 +2130,6 @@ footer {
   padding: 16px 0 4px 0;
 }
 
-.shop-all {
-  margin-bottom: 46px;
-  text-align: center;
-}
-
 .merch {
   background: #ffffff;
   padding-bottom: 30px;
@@ -2355,9 +2274,4 @@ footer {
   text-align: center;
   color: #101010;
   padding: 16px 0 18px 0;
-}
-
-.shop-all {
-  margin-bottom: 46px;
-  text-align: center;
 }
