@@ -15,7 +15,8 @@ function initializeSlider(
   progressBarSelector,
   progressBarLabelSelector,
   arrowSelectors,
-  slidesToShow
+  slidesToShow,
+  tag
 ) {
   const $slider = jQuery(sliderSelector);
   const $progressBar = jQuery(progressBarSelector);
@@ -47,28 +48,90 @@ function initializeSlider(
 
     $progressBarLabel.text(calc + "% completed");
   });
-  $slider.slick({
-    speed: 400,
-    prevArrow: document.getElementById(arrowSelectors.prev),
-    nextArrow: document.getElementById(arrowSelectors.next),
-    slidesToShow: slidesToShow,
-    slidesToScroll: 1,
-    responsive: [
+
+  const breakPoints = {
+    bestSellers:[
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    }],
+    goodTime:[
       {
-        breakpoint: 1008,
+        breakpoint: 992,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
-    ],
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+    }],
+    moreWays:[
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      }],
+    whatEveryone:[{
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+  }]
+  }
+
+  $slider.slick({
+    speed: 400,
+    prevArrow: document.getElementById(arrowSelectors.prev),
+    nextArrow: document.getElementById(arrowSelectors.next),
+    slidesToShow: slidesToShow,
+    slidesToScroll: 1,
+    responsive: breakPoints[tag],
   });
 }
 
@@ -103,19 +166,33 @@ function initializeDotsSlider(sliderSelector, slidesToShow) {
     slidesToScroll: 1,
     responsive: [
       {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 500,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         },
-      },
+    }
     ],
   });
-  // toggleSlickDotsArrows()
+   toggleSlickDotsArrows()
 
-  // $slider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
-  //   toggleSlickDotsArrows();
-  // });
+  $slider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
+     toggleSlickDotsArrows();
+  });
 
 }
 
@@ -176,28 +253,32 @@ jQuery(document).ready(function () {
     ".progress",
     ".slider__label",
     { prev: "js-prev-button", next: "js-next-button" },
-    3
+    3,
+    'bestSellers'
   );
   initializeSlider(
     ".slider1",
     ".progress1",
     ".slider__label1",
     { prev: "js-prev-button1", next: "js-next-button1" },
-    4
+    4,
+    'goodTime'
   );
   initializeSlider(
     ".slider2",
     ".progress2",
     ".slider__label2",
     { prev: "js-prev-button2", next: "js-next-button2" },
-    3
+    3,
+    'moreWays'
   );
   initializeSlider(
     ".slider3",
     ".progress3",
     ".slider__label3",
     { prev: "js-prev-button3", next: "js-next-button3" },
-    4
+    4,
+    'whatEveryone'
   );
   initializeDotsSlider(".slider-dots", 4);
   initializeCategorySlider(".slider-category");

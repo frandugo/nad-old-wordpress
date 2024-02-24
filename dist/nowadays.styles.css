@@ -1317,7 +1317,7 @@ header.sticky {
   border: none;
   margin-bottom: 1.5rem;
   transition: border-color 0.3s ease;
-  width: 284px;
+  width: 100%;
 }
 .good-time-section .good-time-section__products .good-time-section-product__card img:hover {
   border: 4px solid #e6b78a;
