@@ -1,4 +1,5 @@
 <?php /* Template Name: plp */ ?>
+
 <?php get_header(); ?>
 <div class="plp-hero" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/nowadays-hero-img.png')">
     <div class="container">
@@ -133,6 +134,7 @@
 </section>
 
 <!--section merch-->
+
 <section class="merch">
     <div class="container">
         <div class="merch__head">
@@ -151,7 +153,7 @@
                     <?php $background_product = get_field( 'background_product' ); ?>
                 </div>
                 <div class="merch-product__info">
-                    <h2 class="merch-product__title">Nowadays micro dose</h2>
+                    <h2 class="merch-product__title">Classic Hat</h2>
                     <div class="merch-product__reviews">
                         <input type="radio" id="star5" name="rating" value="5"/>
                         <label for="star5">&#9733;</label>
@@ -165,7 +167,7 @@
                         <label for="star1">&#9733;</label>
                     </div>
                     <span class="merch-product__span">67 reviews</span>
-                    <p class="merch-product__price">$39.99</p>
+                    <p class="merch-product__price">$30.00</p>
                     <a href="#" class=" btn btn__beige--small">Add to card</a>
                 </div>
             </div>
@@ -174,7 +176,7 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/img/drink-easy.png'">
                 </div>
                 <div class="merch-product__info">
-                    <h2 class="merch-product__title ">Nowadays low dose</h2>
+                    <h2 class="merch-product__title ">Drink Easy Crew Neck</h2>
                     <div class="merch-product__reviews">
                         <input type="radio" id="star10" name="rating1" value="5"/>
                         <label for="star10">&#9733;</label>
@@ -188,7 +190,7 @@
                         <label for="star6">&#9733;</label>
                     </div>
                     <span class="merch-product__span">87 reviews</span>
-                    <p class="merch-product__price">$59.99</p>
+                    <p class="merch-product__price">$50.00</p>
                     <a href="#" class=" btn btn__beige--small">Add to card</a>
                 </div>
             </div>
@@ -197,7 +199,7 @@
                     <img class="merch-product__img" src="<?php echo get_template_directory_uri(); ?>'/img/drink-easy-hat.png'">
                 </div>
                 <div class="merch-product__info">
-                    <h2 class="merch-product__title ">Nowadays high dose</h2>
+                    <h2 class="merch-product__title ">Drink Easy Hat</h2>
                     <div class="merch-product__reviews">
                         <input type="radio" id="star16" name="rating3" value="5"/>
                         <label for="star16">&#9733;</label>
@@ -211,7 +213,7 @@
                         <label for="star11">&#9733;</label>
                     </div>
                     <span class="merch-product__span">98 reviews</span>
-                    <p class="merch-product__price">$79.99</p>
+                    <p class="merch-product__price">$25.00</p>
                     <a href="#" class=" btn btn__beige--small">Add to card</a>
                 </div>
             </div>
@@ -234,7 +236,7 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/img/classic_hoodie.png'">
                 </div>
                 <div class="merch-product__info">
-                    <h2 class="merch-product__title">Nowadays micro dose</h2>
+                    <h2 class="merch-product__title">Nowadays T</h2>
                     <div class="merch-product__reviews">
                         <input type="radio" id="star5" name="rating" value="5"/>
                         <label for="star5">&#9733;</label>
@@ -248,7 +250,7 @@
                         <label for="star1">&#9733;</label>
                     </div>
                     <span class="merch-product__span">67 reviews</span>
-                    <p class="merch-product__price">$39.99</p>
+                    <p class="merch-product__price">$25.00</p>
                     <a href="#" class=" btn btn__beige--small">Add to card</a>
                 </div>
             </div>
@@ -257,7 +259,7 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/img/nowadays_t.png'">
                 </div>
                 <div class="merch-product__info">
-                    <h2 class="merch-product__title ">Nowadays low dose</h2>
+                    <h2 class="merch-product__title ">The Classic Hoodie</h2>
                     <div class="merch-product__reviews">
                         <input type="radio" id="star10" name="rating1" value="5"/>
                         <label for="star10">&#9733;</label>
@@ -271,7 +273,7 @@
                         <label for="star6">&#9733;</label>
                     </div>
                     <span class="merch-product__span">87 reviews</span>
-                    <p class="merch-product__price">$59.99</p>
+                    <p class="merch-product__price">$60.00</p>
                     <a href="#" class=" btn btn__beige--small">Add to card</a>
                 </div>
             </div>
@@ -280,7 +282,7 @@
                     <img class="merch-product__img" src="<?php echo get_template_directory_uri(); ?>'/img/wavy_t.png'">
                 </div>
                 <div class="merch-product__info">
-                    <h2 class="merch-product__title ">Nowadays high dose</h2>
+                    <h2 class="merch-product__title ">Wavy T</h2>
                     <div class="merch-product__reviews">
                         <input type="radio" id="star16" name="rating3" value="5"/>
                         <label for="star16">&#9733;</label>
@@ -294,7 +296,7 @@
                         <label for="star11">&#9733;</label>
                     </div>
                     <span class="merch-product__span">98 reviews</span>
-                    <p class="merch-product__price">$79.99</p>
+                    <p class="merch-product__price">$25.00</p>
                     <a href="#" class=" btn btn__beige--small">Add to card</a>
                 </div>
             </div>
@@ -348,7 +350,11 @@
                 <button class="action-button">SUBSCRIBE & SAVE</button>
             </div>
         </div>
-    </section>
+</section>
+
+
+
+
 
 
 

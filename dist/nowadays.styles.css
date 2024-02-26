@@ -379,6 +379,7 @@ header.sticky {
   gap: 20px;
   padding: 18px 0;
   gap: 66px;
+  justify-content: center;
 }
 
 .nav__link {
@@ -1807,7 +1808,7 @@ input:focus ~ .highlight {
 footer {
   background: #2d2926;
   font-family: "euclid_circular_amedium", sans-serif;
-  padding: 40px 0 20px 0;
+  padding: 80px 0 33px 0;
 }
 
 .footer {
@@ -1863,11 +1864,11 @@ footer {
   }
 }
 .plp-hero {
+  align-items: center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  align-items: center;
   padding: 320px 0 70px;
 }
 .plp-hero h2 {
@@ -1884,14 +1885,15 @@ footer {
   .plp-hero h2 {
     font-size: 40px;
     line-height: 40px;
+    padding: 0 32px;
   }
 }
 
 .shop-nowadays {
   background: #ffffff;
+  margin-bottom: 84px;
   padding-bottom: 30px;
   padding-top: 108px;
-  margin-bottom: 84px;
 }
 @media (max-width: 768px) {
   .shop-nowadays {
@@ -1922,6 +1924,7 @@ footer {
   gap: 32px;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
+  align-items: center;
 }
 @media (max-width: 768px) {
   .shop-nowadays__products {
@@ -1934,26 +1937,47 @@ footer {
   text-transform: uppercase;
 }
 .sn-product__title {
+  color: #101010;
   font-family: "EuclidFlexMedium";
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 0em;
-  text-align: center;
   line-height: 0;
-  color: #101010;
+  text-align: center;
 }
 .sn-product__image {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 86%;
-  margin-bottom: 64px;
-  text-align: center;
-  transition: 0.2s linear;
   display: flex;
   justify-content: center;
+  margin-bottom: 59px;
+  text-align: center;
+  transition: 0.2s linear;
 }
 .sn-product__image img {
   height: 460px;
+}
+.sn-product__reviews {
+  direction: rtl;
+  display: inline-block;
+  margin-right: 3px;
+  unicode-bidi: bidi-override;
+}
+.sn-product__reviews input {
+  display: none;
+}
+.sn-product__reviews input:checked ~ label {
+  color: #efba87;
+}
+.sn-product__reviews input:focus ~ label, .sn-product__reviews input:valid ~ label {
+  color: #efba87;
+}
+.sn-product__reviews label {
+  color: #efba87;
+  cursor: pointer;
+  font-size: 24px;
+  position: static;
 }
 .sn-product .sn-product__infocards {
   height: 100%;
@@ -1973,36 +1997,17 @@ footer {
   cursor: pointer;
   transition: 0.2s linear;
 }
-.sn-product__reviews {
-  direction: rtl;
-  display: inline-block;
-  margin-right: 3px;
-  unicode-bidi: bidi-override;
-}
-.sn-product__reviews input {
-  display: none;
-}
-.sn-product__reviews label {
-  color: #31374F;
-  cursor: pointer;
-  font-size: 20px;
-}
-.sn-product__reviews input:checked ~ label {
-  color: #efba87;
-}
 .sn-product__span {
   display: inline-block;
-  font-family: "euclid_circular_alight";
-  font-size: 18px;
+  font-family: "EuclidFlexLight";
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0em;
-  line-height: 23px;
-  margin-bottom: 10px;
   text-align: center;
 }
 .sn-product__description, .sn-product__bottle {
   font-family: "euclid_circular_alight";
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 23px;
@@ -2012,14 +2017,14 @@ footer {
   margin-bottom: 6px;
 }
 .sn-product__price {
+  color: #101010;
   font-family: "EuclidFlexMedium";
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 25px;
-  text-align: center;
-  color: #101010;
   padding: 16px 0 4px 0;
+  text-align: center;
 }
 
 .shop-all {
@@ -2029,12 +2034,14 @@ footer {
 
 .merch {
   background: #ffffff;
-  padding-bottom: 30px;
+  margin-bottom: 31px;
 }
 .merch select {
-  padding: 14px 76px;
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 264px;
 }
-.merch select option {
+.merch option {
   font-size: 20px;
 }
 .merch-box6 {
@@ -2053,16 +2060,19 @@ footer {
   border: 2px solid #2d2926;
 }
 .merch__head {
-  margin-bottom: 60px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .merch__head {
+    display: block;
+  }
 }
 .merch__title {
-  font-family: "EuclidFlexMedium";
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 0em;
-  line-height: 0px;
   text-align: left;
   text-transform: uppercase;
 }
@@ -2113,16 +2123,17 @@ footer {
   text-transform: uppercase;
 }
 .merch-product__title {
-  font-family: "EuclidFlexMedium";
+  color: #101010;
+  font-family: "euclid_circular_alight";
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0em;
   text-align: center;
-  line-height: 0;
-  color: #101010;
+  text-transform: capitalize;
+  margin-bottom: 17px;
 }
 .merch-product__image img {
-  margin-bottom: 33px;
+  margin-bottom: 14px;
 }
 .merch-product__reviews {
   direction: rtl;
@@ -2133,22 +2144,26 @@ footer {
 .merch-product__reviews input {
   display: none;
 }
-.merch-product__reviews label {
-  color: #31374F;
-  cursor: pointer;
-  font-size: 20px;
-}
 .merch-product__reviews input:checked ~ label {
   color: #efba87;
+}
+.merch-product__reviews input:focus ~ label, .merch-product__reviews input:valid ~ label {
+  color: #efba87;
+  font-size: 24px;
+}
+.merch-product__reviews label {
+  color: #efba87;
+  cursor: pointer;
+  font-size: 24px;
+  position: static;
 }
 .merch-product__span {
   display: inline-block;
   font-family: "euclid_circular_alight";
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0em;
-  line-height: 23px;
-  margin-bottom: 10px;
+  margin-bottom: 17px;
   text-align: center;
 }
 .merch-product__description, .merch-product__bottle {
@@ -2159,18 +2174,14 @@ footer {
   line-height: 23px;
   text-align: center;
 }
-.merch-product__title, .merch-product__reviews, .merch-product__bottle {
-  margin-bottom: 6px;
-}
 .merch-product__price {
+  color: #101010;
   font-family: "EuclidFlexMedium";
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 0em;
-  line-height: 25px;
+  padding: 16px 0 9px 0;
   text-align: center;
-  color: #101010;
-  padding: 16px 0 18px 0;
 }
 
 .shop-all {

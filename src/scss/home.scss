@@ -359,7 +359,7 @@
       flex-direction: column;
       align-items: center;
       margin: 0 1rem;
-      padding: 2rem;;
+      padding: 2rem;
       img {
         border: none;
         margin-bottom: 1.5rem;
@@ -399,7 +399,7 @@
   position: relative;
   margin-top: 2rem;
   padding: 0 2.8rem;
-  gap:10%;
+  gap: 10%;
   &__buttons {
     display: flex;
     gap: 10px;
@@ -656,8 +656,8 @@
   }
   &__video-list {
     padding: 36px 0;
-    .what-everyone__card{
-      img{
+    .what-everyone__card {
+      img {
         width: 100%;
       }
     }
@@ -677,7 +677,7 @@
     }
   }
 
-  .scroll-indicator{
+  .scroll-indicator {
     padding: 0 0.5rem !important;
     margin-bottom: 2rem;
   }
@@ -1017,17 +1017,17 @@ input:focus ~ .highlight {
 
   /* Scroll indicator*/
   .scroll-indicator {
-    padding: 0  1rem !important;
+    padding: 0 1rem !important;
   }
 
   /* 
       more ways section
   */
   .more-ways-section {
-    .scroll-indicator{
+    .scroll-indicator {
       display: none;
     }
-    &__card{
+    &__card {
       padding: 0.8rem !important;
     }
     &__button-container {
@@ -1052,8 +1052,8 @@ input:focus ~ .highlight {
         }
       }
     }
-    .what-everyone__card{
-      margin: 0 .5rem;
+    .what-everyone__card {
+      margin: 0 0.5rem;
     }
   }
 
