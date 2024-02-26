@@ -931,13 +931,8 @@ input:focus ~ .highlight {
 }
 
 @keyframes animated-text {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7))}
 }
 
 @media (min-width: 768px) {
