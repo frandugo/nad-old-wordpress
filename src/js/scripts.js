@@ -188,11 +188,6 @@ function initializeDotsSlider(sliderSelector, slidesToShow) {
     }
     ],
   });
-   toggleSlickDotsArrows()
-
-  $slider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
-     toggleSlickDotsArrows();
-  });
 
 }
 
@@ -215,24 +210,6 @@ function initializeCategorySlider(sliderSelector) {
       },
     ],
   });
-}
-
-function toggleSlickDotsArrows(){
-  const slickDots = document.querySelector(".slick-dots");
-    
-      if(slickDots.children[0].className === "slick-active"){
-        jQuery("#js-prev-button-dots").hide();
-        jQuery(".slider-dots__buttons").css("justify-content", "flex-end");
-      }else if(slickDots.children[0].className !== "slick-active"){
-        jQuery("#js-prev-button-dots").show();
-        jQuery(".slider-dots__buttons").css("justify-content", "space-between");
-
-      }
-      if(slickDots.children[3].className === "slick-active" ){
-        jQuery("#js-next-button-dots").hide();
-      }else if(slickDots.children[3].className !== "slick-active"){
-        jQuery("#js-next-button-dots").show();
-      }
 }
 
 function menuMobile() {
@@ -287,4 +264,15 @@ jQuery(document).ready(function () {
 
   stickyHeader();
   menuMobile();
+
+
+// Code
+let e = jQuery("#js-header");
+jQuery("#js-toggle-menu").on("click", function (t) {
+  console.log("click in mobile ");
+  jQuery("html, body").toggleClass("is-locked"), jQuery(t.currentTarget).toggleClass("is-open"), jQuery("#js-menu").toggleClass("is-shown"), e.toggleClass("is-open"), e.removeClass("is-fixed");
+});
+
+
+
 });

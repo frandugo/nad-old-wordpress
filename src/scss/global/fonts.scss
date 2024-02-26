@@ -1,72 +1,13 @@
-@font-face {
-  font-family: "euclid_circular_abold";
-  src: url("./../fonts/euclid_circular_a_bold-webfont.woff2") format("woff2"),
-    url("./../fonts/euclid_circular_a_bold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "euclid_circular_alight";
-  src: url("./../fonts/euclid_circular_a_light-webfont.woff2") format("woff2"),
-    url("./../fonts/euclid_circular_a_light-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 
 @font-face {
-  font-family: "euclid_circular_amedium";
-  src: url("./../fonts/euclid_circular_a_medium-webfont.woff2") format("woff2"),
-    url("./../fonts/euclid_circular_a_medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "euclid_circular_aregular";
-  src: url("./../fonts/euclid_circular_a_regular-webfont.woff2") format("woff2"),
-    url("./../fonts/euclid_circular_a_regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "euclid_circular_asemibold";
-  src: url("./../fonts/euclid_circular_a_semibold-webfont.woff2")
-      format("woff2"),
-    url("./../fonts/euclid_circular_a_semibold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "EuclidFlexSemibold";
-  src: url("./../fonts/EuclidFlexSemibold-webfont.woff2") format("woff2"),
-    url("./../fonts/EuclidFlexSemibold-webfont.woff") format("woff");
-  font-weight: normal;
+    font-family: "EuclidCircularARegular";
+    src: url(./../fonts//EuclidCircularARegular.woff) format("woff"), url(./../fonts/EuclidCircularARegular.ttf) format("truetype");
 }
 @font-face {
-  font-family: "EuclidFlexBold";
-  src: url("./../fonts/EuclidFlexBold-webfont.woff2") format("woff2"),
-    url("./../fonts/EuclidFlexBold-webfont.woff") format("woff");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "EuclidFlexLight";
-  src: url("./../fonts/EuclidFlexLight-webfont.woff2") format("woff2"),
-    url("./../fonts/EuclidFlexLight-webfont.woff") format("woff");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "EuclidFlexMedium";
-  src: url("./../fonts/EuclidFlexMedium-webfont.woff2") format("woff2"),
-    url("./../fonts/EuclidFlexMedium-webfont.woff") format("woff");
-  font-weight: normal;
+    font-family: "EuclidFlexMedium";
+    src: url(./../fonts//EuclidFlexMedium.woff) format("woff"), url(./../fonts//EuclidFlexMedium.ttf) format("truetype");
 }
 @font-face {
-  font-family: "EuclidFlexRegular";
-  src: url("./../fonts/EuclidFlexRegular-webfont.woff2") format("woff2"),
-    url("./../fonts/EuclidFlexRegular-webfont.woff") format("woff");
-  font-weight: normal;
+    font-family: "ElicitScript-SemiBold";
+    src: url(./../fonts//ElicitScript-SemiBold.woff) format("woff"), url(./../fonts//ElicitScript-SemiBold.ttf) format("truetype");
 }

@@ -1,3 +1,36 @@
+/* scroll indicator */
+.scroll-indicator {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 2rem;
+  padding: 0 2.8rem;
+  gap:10%;
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+  button {
+    background-color: transparent;
+    border: 2px solid black;
+    height: 48px;
+    width: 48px;
+    &.disabled {
+      opacity: 0.3;
+    }
+  }
+  &__buttons {
+    &--left {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
 .progress, .progress1, .progress2, .progress3 {
     display: block;
     width: 100%;
