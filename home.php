@@ -47,6 +47,7 @@
     </div>
 </div>
 <div class="icons">
+<<<<<<< HEAD
     <div class="icons__container">
         <div class="slider-dots">
             <?php if ( have_rows( 'dots' ) ) : ?>
@@ -67,6 +68,26 @@
             <button id="js-next-button-dots" class="slider-dots__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left"> </button>
         </div>
     </div>    
+=======
+    <div class="slider-dots">
+        <?php if ( have_rows( 'dots' ) ) : ?>
+        <?php while ( have_rows( 'dots' ) ) : the_row(); ?>
+            <div class="icons__icon">
+                <?php if ( get_sub_field( 'dot_image' ) ) : ?>
+                    <img src="<?php the_sub_field( 'dot_image' ); ?>" />
+                <?php endif ?>
+                <p><?php the_sub_field( 'dot_text' ); ?></p>
+            </div>
+        <?php endwhile; ?>
+        <?php else : ?>
+            <?php // No rows found ?>
+        <?php endif; ?>
+    </div>
+    <div class="slider-dots__buttons">
+        <button id="js-prev-button-dots" class="slider-dots__buttons--left"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Right"> </button>
+        <button id="js-next-button-dots" class="slider-dots__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left"> </button>
+    </div>
+>>>>>>> 6b3e76460386f6528edb442652b1d762c987c5d5
 </div>
 <div class="animated-text">
     <div class="animated-text__container">
@@ -106,14 +127,20 @@
             <h2 class="best-sellers__title title_sm">Shop Nowadays Best Sellers</h2>
             <p class="best-sellers__description">Bright. Buzzy. Balanced</p>
         </div>
+<<<<<<< HEAD
         <div class="best-sellers__products slider"> 
         <?php $products = get_field( 'products' ); ?>
 
+=======
+        <div class="best-sellers__products slider">
+        <?php $products = get_field( 'products' ); ?>
+>>>>>>> 6b3e76460386f6528edb442652b1d762c987c5d5
         <?php if ( $products ) : ?>
             <?php foreach ( $products as $post ) : ?>
                 <?php setup_postdata ( $post ); ?>
                 <div class="bs-product">
                     <div class="bs-product__image bs-product__one">
+<<<<<<< HEAD
                     <img src="<?php echo $image; ?>">
                         <!--<img src="<?php echo get_template_directory_uri(); ?>/img/Nowadays_micro_dose.webp'">-->
                     <?php 
@@ -122,6 +149,51 @@
                         print_r($sale);
                     ?>    
 
+=======
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/Nowadays_micro_dose.webp'">
+                    </div>
+                    <div class="bs-product__info">
+                        <h2 class="bs-product__title"><?php the_title(); ?></h2>
+                        <div class="bs-product__reviews">
+                            <input type="radio" id="star5" name="rating" value="5"/>
+                            <label for="star5">&#9733;</label>
+                            <input type="radio" id="star4" name="rating" value="4"/>
+                            <label for="star4">&#9733;</label>
+                            <input type="radio" id="star3" name="rating" value="3"/>
+                            <label for="star3">&#9733;</label>
+                            <input type="radio" id="star2" name="rating" value="2"/>
+                            <label for="star2">&#9733;</label>
+                            <input type="radio" id="star1" name="rating" value="1"/>
+                            <label for="star1">&#9733;</label>
+                        </div>
+                        <span class="bs-product__span">67 reviews</span>
+                        <p class="bs-product__description">2mg thc drink</p>
+                        <p class="bs-product__bottle">750 ml/33mg per bottle</p>
+                        <p class="bs-product__price">$39.99</p>
+                        <a href="<?php the_permalink(); ?>" class="btn btn__beige btn__medium bt__full btn__transform">shop now</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
+            <div class="bs-product">
+                <div class="bs-product__image bs-product__one">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/Nowadays_micro_dose.webp'">
+                </div>
+                <div class="bs-product__info">
+                    <h2 class="bs-product__title">Nowadays micro dose</h2>
+                    <div class="bs-product__reviews">
+                        <input type="radio" id="star5" name="rating" value="5"/>
+                        <label for="star5">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4"/>
+                        <label for="star4">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3"/>
+                        <label for="star3">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2"/>
+                        <label for="star2">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1"/>
+                        <label for="star1">&#9733;</label>
+>>>>>>> 6b3e76460386f6528edb442652b1d762c987c5d5
                     </div>
                     <!--<div class="bs-product__info">
                         <h2 class="bs-product__title"><?php the_title(); ?></h2>

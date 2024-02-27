@@ -411,6 +411,7 @@ button {
     text-transform: uppercase;
     color: #000;
   }
+<<<<<<< HEAD
 }
 
 .menu-mobile {
@@ -526,6 +527,119 @@ button {
   z-index: 999999;
   opacity: 1;
 }
+=======
+}
+
+.menu-mobile {
+  background-color: #efba87;
+  height: 100vh;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  transition: transform 0.25s cubic-bezier(0.04, -0.1, 0.29, 0.98), opacity 0.25s cubic-bezier(0.04, -0.1, 0.29, 0.98);
+  transform: translateY(-120vh);
+  width: 100%;
+  z-index: 99999;
+}
+
+.menu__wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 720px;
+}
+
+.menu__content .l-container {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.menu__nav {
+  margin-top: 160px;
+}
+
+.menu.is-shown, .menu.is-shown .menu__list li {
+  opacity: 1;
+  transform: none;
+}
+
+.menu__list li:not(:last-child) {
+  margin-bottom: 35px;
+}
+
+.menu__list li a {
+  font-size: clamp(32px, 7.4vw, 37px);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.menu-mobile.is-shown, .menu-mobile.is-shown .menu__list li {
+  opacity: 1;
+  transform: none;
+}
+
+.header.is-open .header__hamburger span:first-child {
+  transform: scale(1.15) rotate(-45deg) translate(-4px, 3px);
+}
+
+.header.is-open .header__hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__hamburger span:first-child {
+  top: 3px;
+  left: 0;
+}
+
+.header.is-open .header__hamburger span:last-child {
+  transform: scale(1.15) rotate(45deg) translate(-6px, -5px);
+}
+
+.menu__content {
+  margin-top: 200px;
+  margin-bottom: 40px;
+}
+
+.menu__bottom {
+  width: 100%;
+  text-align: center;
+}
+
+.menu__bottom ul {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.menu__bottom ul li {
+  margin-right: 20px;
+}
+
+.menu__bottom ul a {
+  color: #000;
+}
+
+.menu__bottom ul li:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.menu__bottom-logo img {
+  filter: invert(1);
+}
+
+@media screen and (max-width: 767px) {
+  .l-container {
+    width: 100%;
+    padding: 0 25px;
+  }
+}
+.header {
+  border-bottom: 2px solid #ffffff;
+  z-index: 999999;
+  position: fixed;
+  width: 100%;
+}
+>>>>>>> 6b3e76460386f6528edb442652b1d762c987c5d5
 .header.sticky {
   background-color: #101010;
   position: fixed;
@@ -537,6 +651,9 @@ button {
   transition: transform ease-out 0.2s;
   transform: translateY(-100%) !important;
   opacity: 0;
+}
+.header__mobile-logo {
+  display: none;
 }
 .header__mobile-logo {
   display: none;
@@ -1280,7 +1397,11 @@ button {
 .bs-product {
   text-align: center;
   text-transform: uppercase;
+<<<<<<< HEAD
   min-height: 800px;
+=======
+  min-height: 780px;
+>>>>>>> 6b3e76460386f6528edb442652b1d762c987c5d5
 }
 .bs-product__title {
   color: #101010;

@@ -1,9 +1,14 @@
 .header {
   border-bottom: 2px solid $white;
+<<<<<<< HEAD
   background: transparent;
   position: absolute;
   top: 0;
   transition: opacity 0.4s ease-in-out;
+=======
+  z-index: 999999;
+  position: fixed;
+>>>>>>> 6b3e76460386f6528edb442652b1d762c987c5d5
   width: 100%;
   z-index: 999999;
   opacity: 1;
@@ -18,6 +23,9 @@
     transition: transform ease-out 0.2s;
     transform: translateY(-100%)!important;
     opacity: 0;
+  }
+  &__mobile-logo{
+    display: none;
   }
   &__mobile-logo{
     display: none;

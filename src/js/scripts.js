@@ -276,6 +276,4 @@ jQuery(document).ready(function () {
   stickyHeader();
   menuMobile();
 
-
-
 });
