@@ -1,13 +1,26 @@
 
 
 function stickyHeader() {
-  jQuery(window).scroll(function() {  
-    if (jQuery(this).scrollTop() > 20) {    
-        jQuery('header').addClass("sticky");  
-      } else {  
-        jQuery('header').removeClass("sticky");  
-      }  
-    }); 
+    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    window.addEventListener(
+      'scroll',
+      function handleScroll() {
+        const scrollTopPosition = window.scrollY || document.documentElement.scrollTop;
+        if (scrollTopPosition > 200) {
+          jQuery('header').addClass("is-fixed--up");
+        }
+        if (scrollTopPosition > lastScrollTop) {
+          // jQuery('header').removeClass("sticky");
+        } else if (scrollTopPosition < lastScrollTop) {
+          jQuery('header').removeClass("is-fixed--up");
+          jQuery('header').addClass("sticky");
+        }
+        lastScrollTop =
+          scrollTopPosition <= 0 ? 0 : scrollTopPosition;
+      },
+      false,
+    );
 }
 
 function initializeSlider(
@@ -141,16 +154,17 @@ function initializeCarousel(sliderSelector) {
     dots: false,
     prevArrow: false,
     nextArrow: false,
-    speed: 400,
+    speed: 1000,
     slidesToShow: 7,
     slidesToScroll: 1,
     variableWidth: true,
     adaptiveHeight: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 0,
     pauseOnHover: false,
     swipeToSlide: false,
+    cssEase:'linear',
   });
 }
   
@@ -188,11 +202,6 @@ function initializeDotsSlider(sliderSelector, slidesToShow) {
     }
     ],
   });
-   toggleSlickDotsArrows()
-
-  $slider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
-     toggleSlickDotsArrows();
-  });
 
 }
 
@@ -217,32 +226,11 @@ function initializeCategorySlider(sliderSelector) {
   });
 }
 
-function toggleSlickDotsArrows(){
-  const slickDots = document.querySelector(".slick-dots");
-    
-      if(slickDots.children[0].className === "slick-active"){
-        jQuery("#js-prev-button-dots").hide();
-        jQuery(".slider-dots__buttons").css("justify-content", "flex-end");
-      }else if(slickDots.children[0].className !== "slick-active"){
-        jQuery("#js-prev-button-dots").show();
-        jQuery(".slider-dots__buttons").css("justify-content", "space-between");
-
-      }
-      if(slickDots.children[3].className === "slick-active" ){
-        jQuery("#js-next-button-dots").hide();
-      }else if(slickDots.children[3].className !== "slick-active"){
-        jQuery("#js-next-button-dots").show();
-      }
-}
-
 function menuMobile() {
-  jQuery(".js-menu-mobile__open").click(function (e) {
-    e.preventDefault();
-    jQuery(".js-menu-mobile__list").addClass("open");
-  });
-  jQuery(".js-menu-mobile__close").click(function (e) {
-    e.preventDefault();
-    jQuery(".js-menu-mobile__list").removeClass("open");
+  let e = jQuery("#js-header");
+  jQuery("#js-toggle-menu").on("click", function (t) {
+    console.log("click in mobile ");
+    jQuery("html, body").toggleClass("is-locked"), jQuery(t.currentTarget).toggleClass("is-open"), jQuery("#js-menu").toggleClass("is-shown"), e.toggleClass("is-open"), e.removeClass("is-fixed");
   });
 }
   
@@ -287,4 +275,7 @@ jQuery(document).ready(function () {
 
   stickyHeader();
   menuMobile();
+
+
+
 });

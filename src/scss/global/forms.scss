@@ -1,0 +1,61 @@
+/* input */
+.group {
+    position: relative;
+  }
+  input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    display: block;
+    font-family: "EuclidCircularARegular";
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+  }
+  input:focus {
+    outline: none;
+  }
+  
+  label {
+    color: #999;
+    font-family: "EuclidCircularARegular";
+    font-size: 18px;
+    font-weight: normal;
+    left: 5px;
+    pointer-events: none;
+    position: absolute;
+    top: 10px;
+    transition: 0.2s ease all;
+  }
+  
+  /* active state */
+  input:focus ~ label,
+  input:valid ~ label {
+    color: black;
+    font-size: 14px;
+    top: -20px;
+  }
+
+  button{
+    font-family: "EuclidFlexMedium";
+  }
+
+  .bar {
+    display: block;
+    position: relative;
+  }
+  .bar:before,
+  .bar:after {
+    background: black;
+    bottom: 1px;
+    content: "";
+    height: 2px;
+    position: absolute;
+    transition: 0.2s ease all;
+    width: 0;
+  }
+  .bar:before {
+    left: 50%;
+  }
+  .bar:after {
+    right: 50%;
+  }
