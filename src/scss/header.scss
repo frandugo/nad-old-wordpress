@@ -1,19 +1,15 @@
 .header {
   border-bottom: 2px solid $white;
-<<<<<<< HEAD
   background: transparent;
   position: absolute;
-  top: 0;
+  top: 0 !important;
   transition: opacity 0.4s ease-in-out;
-=======
-  z-index: 999999;
-  position: fixed;
->>>>>>> 6b3e76460386f6528edb442652b1d762c987c5d5
   width: 100%;
   z-index: 999999;
   opacity: 1;
   &.sticky {
     background-color: $black;
+    border-bottom: 0;
     position: fixed;
     top: 0px !important;
     transform: translateY(0) !important;

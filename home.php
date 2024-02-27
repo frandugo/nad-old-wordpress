@@ -47,7 +47,6 @@
     </div>
 </div>
 <div class="icons">
-<<<<<<< HEAD
     <div class="icons__container">
         <div class="slider-dots">
             <?php if ( have_rows( 'dots' ) ) : ?>
@@ -68,158 +67,67 @@
             <button id="js-next-button-dots" class="slider-dots__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left"> </button>
         </div>
     </div>    
-=======
-    <div class="slider-dots">
-        <?php if ( have_rows( 'dots' ) ) : ?>
-        <?php while ( have_rows( 'dots' ) ) : the_row(); ?>
-            <div class="icons__icon">
-                <?php if ( get_sub_field( 'dot_image' ) ) : ?>
-                    <img src="<?php the_sub_field( 'dot_image' ); ?>" />
-                <?php endif ?>
-                <p><?php the_sub_field( 'dot_text' ); ?></p>
-            </div>
-        <?php endwhile; ?>
+</div>
+<div class="animated-text">
+    <div class="animated-text__container">
+        <?php if ( have_rows( 'animated_texts' ) ) : ?>
+            <?php while ( have_rows( 'animated_texts' ) ) : the_row(); ?>
+                <p>
+                    <?php the_sub_field( 'text' ); ?>
+                </p>
+            <?php endwhile; ?>
         <?php else : ?>
             <?php // No rows found ?>
         <?php endif; ?>
     </div>
-    <div class="slider-dots__buttons">
-        <button id="js-prev-button-dots" class="slider-dots__buttons--left"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Right"> </button>
-        <button id="js-next-button-dots" class="slider-dots__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left"> </button>
-    </div>
->>>>>>> 6b3e76460386f6528edb442652b1d762c987c5d5
-</div>
-<div class="animated-text">
-    <div class="animated-text__container">
-        <p>
-            <span>DON’T DRINK HARD.</span>
-            DRINK EASY.
-        </p>
-        <p>
-            <span>DON’T DRINK HARD.</span>
-            DRINK EASY.
-        </p>
-        <p>
-            <span>DON’T DRINK HARD.</span>
-            DRINK EASY.
-        </p>
-        <p>
-            <span>DON’T DRINK HARD.</span>
-            DRINK EASY.
-        </p>
-        <p>
-            <span>DON’T DRINK HARD.</span>
-            DRINK EASY.
-        </p>
-        <p>
-            <span>DON’T DRINK HARD.</span>
-            DRINK EASY.
-        </p>
-        <p>
-            <span>DON’T DRINK HARD.</span>
-            DRINK EASY.
-        </p>
-        </div>
 </div>
 <section class="best-sellers">
     <div class="container">
         <div class="best-sellers__head">
-            <h2 class="best-sellers__title title_sm">Shop Nowadays Best Sellers</h2>
-            <p class="best-sellers__description">Bright. Buzzy. Balanced</p>
+            <h2 class="best-sellers__title title_sm"><?php the_field( 'best_sellers_title' ); ?></h2>
+            <p class="best-sellers__description"><?php the_field( 'best_sellers_subtitle' ); ?></p>
         </div>
-<<<<<<< HEAD
         <div class="best-sellers__products slider"> 
-        <?php $products = get_field( 'products' ); ?>
-
-=======
-        <div class="best-sellers__products slider">
-        <?php $products = get_field( 'products' ); ?>
->>>>>>> 6b3e76460386f6528edb442652b1d762c987c5d5
-        <?php if ( $products ) : ?>
-            <?php foreach ( $products as $post ) : ?>
-                <?php setup_postdata ( $post ); ?>
-                <div class="bs-product">
-                    <div class="bs-product__image bs-product__one">
-<<<<<<< HEAD
-                    <img src="<?php echo $image; ?>">
-                        <!--<img src="<?php echo get_template_directory_uri(); ?>/img/Nowadays_micro_dose.webp'">-->
+            <?php $products = get_field( 'products' ); ?>
+            <?php if ( $products ) : ?>
+                <?php foreach ( $products as $post ) : ?>
                     <?php 
-                        $sale = get_post_meta( $post->ID, '_sale_price', true);
-                        $thumbnail_id = get_post_meta($post->ID);
-                        print_r($sale);
-                    ?>    
+                        $product = wc_get_product($post->ID);
+                        $product_permalink = $product->get_permalink();
+                        $sku = $product->get_sku();
+                        $product_name = $product->get_name();
+                        $product_image = $product->get_featured();
+                        $product_price = $product->get_price();
 
-=======
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/Nowadays_micro_dose.webp'">
-                    </div>
-                    <div class="bs-product__info">
-                        <h2 class="bs-product__title"><?php the_title(); ?></h2>
-                        <div class="bs-product__reviews">
-                            <input type="radio" id="star5" name="rating" value="5"/>
-                            <label for="star5">&#9733;</label>
-                            <input type="radio" id="star4" name="rating" value="4"/>
-                            <label for="star4">&#9733;</label>
-                            <input type="radio" id="star3" name="rating" value="3"/>
-                            <label for="star3">&#9733;</label>
-                            <input type="radio" id="star2" name="rating" value="2"/>
-                            <label for="star2">&#9733;</label>
-                            <input type="radio" id="star1" name="rating" value="1"/>
-                            <label for="star1">&#9733;</label>
+                        $product_reviews_count = $product->get_review_count();
+                        $product_rating_count = $product->get_rating_count();
+                        $product_rating = $product->get_average_rating();
+
+                        $product_background = get_field( "product_background", $post->ID );
+                    ?>
+                    <div class="bs-product">
+                        <div class="bs-product__image">
+                            <?php $image = $product->get_image( array( 500, 500 ) , array('class' => 'bs-product__image-product')); ?>
+                            <img class="bs-product__image-background" src="<?php echo $product_background; ?>" alt="" />
+                            <?php echo $image; ?>
                         </div>
-                        <span class="bs-product__span">67 reviews</span>
-                        <p class="bs-product__description">2mg thc drink</p>
-                        <p class="bs-product__bottle">750 ml/33mg per bottle</p>
-                        <p class="bs-product__price">$39.99</p>
-                        <a href="<?php the_permalink(); ?>" class="btn btn__beige btn__medium bt__full btn__transform">shop now</a>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
-            <div class="bs-product">
-                <div class="bs-product__image bs-product__one">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/Nowadays_micro_dose.webp'">
-                </div>
-                <div class="bs-product__info">
-                    <h2 class="bs-product__title">Nowadays micro dose</h2>
-                    <div class="bs-product__reviews">
-                        <input type="radio" id="star5" name="rating" value="5"/>
-                        <label for="star5">&#9733;</label>
-                        <input type="radio" id="star4" name="rating" value="4"/>
-                        <label for="star4">&#9733;</label>
-                        <input type="radio" id="star3" name="rating" value="3"/>
-                        <label for="star3">&#9733;</label>
-                        <input type="radio" id="star2" name="rating" value="2"/>
-                        <label for="star2">&#9733;</label>
-                        <input type="radio" id="star1" name="rating" value="1"/>
-                        <label for="star1">&#9733;</label>
->>>>>>> 6b3e76460386f6528edb442652b1d762c987c5d5
-                    </div>
-                    <!--<div class="bs-product__info">
-                        <h2 class="bs-product__title"><?php the_title(); ?></h2>
-                        <div class="bs-product__reviews">
-                            <input type="radio" id="star5" name="rating" value="5"/>
-                            <label for="star5">&#9733;</label>
-                            <input type="radio" id="star4" name="rating" value="4"/>
-                            <label for="star4">&#9733;</label>
-                            <input type="radio" id="star3" name="rating" value="3"/>
-                            <label for="star3">&#9733;</label>
-                            <input type="radio" id="star2" name="rating" value="2"/>
-                            <label for="star2">&#9733;</label>
-                            <input type="radio" id="star1" name="rating" value="1"/>
-                            <label for="star1">&#9733;</label>
+                        <div class="bs-product__info">
+                            <h2 class="bs-product__title"><?php echo $product_name; ?></h2>
+                            <div class="bs-product__reviews">
+                            <?php echo "<h2>" . $product_rating_count . "<h2>"; ?>
+                            <?php 
+                            ?>
+                            </div>
+                            <span class="bs-product__span"><?php echo $product_reviews_count ?> reviews</span>
+                            <p class="bs-product__description"></p>
+                            <p class="bs-product__bottle">750 ml/33mg per bottle</p>
+                            <p class="bs-product__price">$<?php echo $product_price; ?></p>
+                            <a href="<?php echo $product_permalink; ?>" class="btn btn__beige btn__medium bt__full btn__transform">Shop now</a>
                         </div>
-                        <span class="bs-product__span">67 reviews</span>
-                        <p class="bs-product__description"><?php echo $getPost->post_content ?></p>
-                        <p class="bs-product__bottle">750 ml/33mg per bottle</p>
-                        <p class="bs-product__price">$60</p>
-                        <a href="<?php the_permalink(); ?>" class="btn btn__beige btn__medium bt__full btn__transform">shop now</a>
-                    </div>-->
-                </div>
-            <?php endforeach; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?> 
-        
+                    </div>
+                <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>        
         </div>
         <div class="scroll-indicator">
             <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
@@ -235,48 +143,20 @@
     <a href="#" class="btn btn__white btn__medium btn__w340 btn__uppercase">Shop all</a>
 </section>
 <section class="media-testimonials-container">
-    <h2>Nowadays in the press</h2>
+    <h2><?php  the_field( 'press_title' ); ?></h2>
     <div class="media-testimonials js-media-testimonials">
-        <div class="media-testimonials__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-6.svg'}}" alt="Press 1" />
-            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
-        </div>
-        <div class="media-testimonials__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-4-2.svg'}}" alt="Press 2" />
-            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
-        </div>
-        <div class="media-testimonials__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-3-2.svg'}}" alt="Press 3" />
-            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
-        </div>
-        <div class="media-testimonials__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-2-2.svg' }}" alt="Press 4" />
-            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
-        </div>
-        <div class="media-testimonials__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-1-2.svg'}}" alt="Press 5" />
-            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
-        </div>
-        <div class="media-testimonials__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-6.svg'}}" alt="Press 1" />
-            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
-        </div>
-        <div class="media-testimonials__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-4-2.svg'}}" alt="Press 2" />
-            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
-        </div>
-        <div class="media-testimonials__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-3-2.svg'}}" alt="Press 3" />
-            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
-        </div>
-        <div class="media-testimonials__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-2-2.svg' }}" alt="Press 4" />
-            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
-        </div>
-        <div class="media-testimonials__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/Frame-24-1-2.svg'}}" alt="Press 5" />
-            <p>"Nowadays is the first nationally avaialble cannabis infused-spirint."</p>
-        </div>
+    <?php if ( have_rows( 'press_items' ) ) : ?>
+        <?php while ( have_rows( 'press_items' ) ) : the_row(); ?>
+            <?php if ( get_sub_field( 'image' ) ) : ?>
+                <a class="media-testimonials__item" href="<?php the_sub_field( 'url' ); ?>">
+                    <img src="<?php the_sub_field( 'image' ); ?>" />
+                    <p><?php the_sub_field( 'text' ); ?></p>
+                </a>
+            <?php endif ?>
+        <?php endwhile; ?>
+    <?php else : ?>
+        <?php // No rows found ?>
+    <?php endif; ?>
     </div>
 </section>
 <section class="good-time">
@@ -326,8 +206,8 @@
     <div class="container">
         <div class="more-ways__head">
             <div class="more-ways__info">
-                <h2 class="more-ways__title">More ways to enjoy<br> Nowdays</h2>
-                <p class="more-ways__subtitle">Drinks with THC.</p>
+                <h2 class="more-ways__title"><?php the_field( 'more_ways_title' ); ?></h2>
+                <p class="more-ways__subtitle"><?php the_field( 'more_ways_subtitle' ); ?></p>
             </div>
             <div class="more-ways__image">
                 <img class="more-ways__animation-text" src="<?php echo get_template_directory_uri(); ?>/img/nowadays-animation-text.svg'" alt="img">
@@ -335,24 +215,25 @@
             </div>
         </div>
         <div class="more-ways__products slider2">
-            <div class="more-ways__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways__card-title">Pucker up</p>
-                <p class="more-ways__card-description">Just enough tartness to keep you coming back for more</p>
-                <!--<button class="btn btn__white btn__medium btn__uppercase">View more</button>-->
-            </div>
-            <div class="more-ways__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways__card-title">Pucker up</p>
-                <p class="more-ways__card-description">Just enough tartness to keep you coming back for more</p>
-                <!--<button class="btn btn__white btn__medium btn__uppercase">View more</button>-->
-            </div>
-            <div class="more-ways__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/Img.png'}}" />
-                <p class="more-ways__card-title">Pucker up</p>
-                <p class="more-ways__card-description">Just enough tartness to keep you coming back for more</p>
-                <!--<button class="btn btn__white btn__medium btn__uppercase">View more</button>-->
-            </div>
+            <?php if ( have_rows( 'more_ways_items' ) ) : ?>
+                <?php while ( have_rows( 'more_ways_items' ) ) : the_row(); ?>
+                    <div class="more-ways__card">
+                        <div class="more-ways__card-image">
+                            <?php $image = get_sub_field( 'image' ); ?>
+                            <?php if ( $image ) : ?>
+                                <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+                            <?php endif; ?>
+                            <div class="more-ways__card-image-overlay">
+                                <a href="<?php the_sub_field( 'url' ); ?>" class="btn btn__border-white btn__medium btn__uppercase">View more</a>
+                            </div>
+                        </div> 
+                        <p class="more-ways__card-title"><?php the_sub_field( 'title' ); ?></p>
+                        <p class="more-ways__card-description"><?php the_sub_field( 'description' ); ?></p>
+                    </div>
+                <?php endwhile; ?>
+            <?php else : ?>
+                <?php // No rows found ?>
+            <?php endif; ?>
         </div>
         <div class="scroll-indicator">
             <div class="progress progress2" role="progressbar" aria-valuemin="0" aria-valuemax="100">
@@ -410,26 +291,18 @@
     <hr class="have-questions__line--top" />
     <div class="container">
         <div class="have-questions__content">
-            <h3>HAVE<br>
-                QUESTIONS?</h3>
+            <h3><?php the_field( 'questions_title' ); ?></h3>
             <div class="have-questions__accordion">
-                <details name="accordion">
-                    <summary>THC? What’s the hype?</summary>
-                    <p>THC is what gives you that perfect lift. A cannabinoid derived from marijuana or hemp, THC is the secret sauce that gives Nowadays it’s social buzz. Each shot (1.5oz) of Nowadays has 2mg. 6mg, or 10MG of THC to deliver a consistent, controllable high, every single time.</p>
-                </details>
-                <details name="accordion">
-                    <summary>Does it taste like Weed?</summary>
-                    <p>Natural fruit flavors, a crisp finish, and absolutely zero cannabis taste. Whether going out or staying in, Nowadays was created with a flavor to assimilate to any occasion.</p>
-                </details>
-                <details name="accordion">
-                    <summary>How Many Can I Drink?</summary>
-                    <p>Designed to replicate the strength of alcohol, we recommend beginners start with a single shot over ice or mix up one of our signature cocktails. Wait 15-30 minutes, and craft your experience from there.</p>
-                </details>
-                <details name="accordion">
-                    <summary>Where Can I Find Nowadays?</summary>
-                    <p>Nowadays can be ordered on our website and shipped directly to your door. The product is currently being rolled out to retailers across the country and we will be adding a Find Us page soon to find a store near you!</p>
-                </details>
-
+                <?php if ( have_rows( 'questions' ) ) : ?>
+                    <?php while ( have_rows( 'questions' ) ) : the_row(); ?>
+                        <details name="accordion">
+                            <summary><?php the_sub_field( 'question' ); ?></summary>
+                            <p><?php the_sub_field( 'answer' ); ?></p>
+                        </details>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <?php // No rows found ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

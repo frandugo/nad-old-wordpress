@@ -1,5 +1,5 @@
 .home-mobile-categories{
-  padding: 95px 0 15px;
+  padding: 50px 0 15px;
   display: none;
   .category{
     margin-right: 20px;
@@ -190,9 +190,9 @@
 }
 
 .bs-product {
+  padding: 30px 20px;
   text-align: center;
   text-transform: uppercase;
-  min-height: 800px;
   &__title {
     color: $black;
     font-family: "EuclidFlexMedium";
@@ -202,42 +202,36 @@
     text-align: center;
     text-wrap: balance;
   }
-
   &__image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 82% 86%;
     margin-bottom: 64px;
     text-align: center;
-    transition: 0.2s linear;
     display: flex;
     justify-content: center;
-    img {
+    position: relative;
+    &-background{
+      opacity: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.2s linear;
+      width: 100%;
+    }
+    &-product{
+      bottom: -20px;
       height: 460px;
+      position: relative;
+      z-index: 2;
+      @media (max-width: 1080px) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &:hover{
+      .bs-product__image-background{
+        opacity: 1;
+      }
     }
   }
-  &__one {
-    &:hover {
-      background-image: url("/img/Bg-micro.png");
-      cursor: pointer;
-      transition: 0.2s linear;
-    }
-  }
-  &__two {
-    &:hover {
-      background-image: url("/img/Bg-low.png");
-      cursor: pointer;
-      transition: 0.2s linear;
-    }
-  }
-  &__three {
-    &:hover {
-      background-image: url("/img/Bg-high.png");
-      cursor: pointer;
-      transition: 0.2s linear;
-    }
-  }
-
   &__reviews {
     direction: rtl;
     display: inline-block;
@@ -336,8 +330,6 @@
   color: $white;
   display: flex;
   -ms-flex-pack: justify;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   justify-content: space-between;
   padding: 12px 0;
   position: absolute;
@@ -345,10 +337,10 @@
   width: 3200px;
 }
 .animated-text__container p {
-  font-family: "Euclid_Flex";
   font-size: 24px;
   letter-spacing: 0.03em;
   padding: 0 20px;
+  text-transform: uppercase;
 }
 
 .animated-text__container span::before {
@@ -391,9 +383,10 @@
       max-width: 300px;
       text-align: center;
       img {
-        margin-bottom: 1rem;
+        margin: 0 auto 1rem auto;
       }
       p {
+        color: $black;
         font-size: 16px;
         font-family: "EuclidCircularARegular";
         line-height: 20px;
@@ -572,9 +565,34 @@
     margin-right: 20px;
     text-align: center;
     &:last-child{ margin-right: 0; }
-    img { 
+    &-image{
+      height: 390px;
       margin-bottom: 20px;
-      width: 100%; 
+      position: relative;
+      img { 
+        width: 100%; 
+        height: 100%;
+        object-fit: cover;
+      }
+      &-overlay{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: 0.2s all linear;
+        z-index: 1;
+        opacity: 0;
+      }
+      &:hover{
+        .more-ways__card-image-overlay{
+          opacity: 1;
+        }
+      }
     }
     &-title {
       font-size: 28px;
@@ -589,6 +607,10 @@
       line-height: 23px;
       margin-bottom: 20px;
       text-align: center;
+    }
+    @media (max-width: 1080px) {
+      margin-right: 0;
+      padding: 30px 20px;
     }
   }
   &__button-container {
@@ -685,12 +707,11 @@
     padding-top: 60px;
     h3 {
       color: #101010;
-      font-family: "Euclid Flex";
       font-size: 48px;
       font-weight: 500;
-      letter-spacing: 1.684999942779541px;
       line-height: 48px;
       text-align: left;
+      text-transform: uppercase;
     }
   }
   &__accordion {
@@ -702,9 +723,14 @@
         line-height: 1.3;
       }
     }
+    details[open] > summary:before {
+      transform: rotate(-45deg);
+    }
+    details[open] > summary:after {
+      transform: rotate(45deg);
+    }
     summary {
       color: #101010;
-      font-family: "Euclid Flex";
       font-size: 32px;
       font-weight: 500;
       letter-spacing: 0.3199999928474426px;
@@ -760,24 +786,24 @@
 
 /* reviews section */
 .wrap-reviews {
+  background-color: rgba(250, 250, 250, 1);
   overflow: hidden;
+  padding: 90px 0 70px;
   position: relative;
   width: 100%;
   z-index: 1;
-
   .reviews {
     animation: animated-text 25s linear infinite;
-    background-color: rgba(250, 250, 250, 1);
     display: flex;
     gap: 3rem;
     overflow: hidden;
-    padding: 40px 0;
     width: 3200px;
     &__card {
       align-items: center;
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      padding: 0 40px;
       &-description {
         font-family: "ElicitScript-SemiBold";
         font-size: 16px;

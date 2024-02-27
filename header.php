@@ -11,7 +11,7 @@
     <?php wp_head(); ?>
 </head>
 <body>
-    <header class="header" id="js-header">
+    <header class="header">
         <?php get_template_part( 'template-parts/notice'); ?>
         <div class="container">
             <div class="nav__items">

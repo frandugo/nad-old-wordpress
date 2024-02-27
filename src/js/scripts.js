@@ -7,20 +7,24 @@ function stickyHeader() {
       'scroll',
       function handleScroll() {
         const scrollTopPosition = window.scrollY || document.documentElement.scrollTop;
-        if (scrollTopPosition > 200) {
-          jQuery('header').addClass("is-fixed--up");
-        }
+        
         if (scrollTopPosition > lastScrollTop) {
-          // jQuery('header').removeClass("sticky");
+          jQuery('header').addClass("is-fixed--up");
         } else if (scrollTopPosition < lastScrollTop) {
           jQuery('header').removeClass("is-fixed--up");
           jQuery('header').addClass("sticky");
         }
-        lastScrollTop =
-          scrollTopPosition <= 0 ? 0 : scrollTopPosition;
+
+        if (scrollTopPosition <= 100) {
+          jQuery('header').removeClass("sticky");
+        }
+
+        lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
+        
       },
       false,
     );
+
 }
 
 function initializeSlider(
@@ -154,7 +158,7 @@ function initializeCarousel(sliderSelector) {
     dots: false,
     prevArrow: false,
     nextArrow: false,
-    speed: 1000,
+    speed: 10000,
     slidesToShow: 7,
     slidesToScroll: 1,
     variableWidth: true,
@@ -227,7 +231,7 @@ function initializeCategorySlider(sliderSelector) {
 }
 
 function menuMobile() {
-  let e = jQuery("#js-header");
+  let e = jQuery("header");
   jQuery("#js-toggle-menu").on("click", function (t) {
     console.log("click in mobile ");
     jQuery("html, body").toggleClass("is-locked"), jQuery(t.currentTarget).toggleClass("is-open"), jQuery("#js-menu").toggleClass("is-shown"), e.toggleClass("is-open"), e.removeClass("is-fixed");

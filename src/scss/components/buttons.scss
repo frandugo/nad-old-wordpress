@@ -4,10 +4,28 @@
   &__beige{
     background: $beige;
     color: $black;
+    &:hover {
+      background: $black;
+      color: $white;
+    }
   }
-  &__beige:hover {
+  &__white{
+    background: $white;
+    border: 2px solid $bg_color;
+    color: $bg_color;
+    &:hover {
     background: $black;
     color: $white;
+    }
+  }  
+  &__border-white{
+    color: $white;
+    background: transparent;
+    border: 1px solid $white;
+    &:hover{
+      background: $white;
+      color: $black;
+    }
   }
   &__w340{
     text-align: center;
@@ -28,15 +46,6 @@
   &__small {
     font-size: 20px;
     padding: 13px 40px;
-  }
-  &__white{
-    background: $white;
-    border: 2px solid $bg_color;
-    color: $bg_color;
-  }
-  &__white:hover {
-    background: $black;
-    color: $white;
   }
   &__uppercase{ text-transform: uppercase; }
   @media (max-width: 1080px) {

@@ -1,11 +1,12 @@
 footer {
   background: #2d2926;
   font-family: $font_family;
-  padding: 40px 0 20px 0;
+  padding: 65px 0 25px 0;
 }
 .footer {
   display: flex;
   gap: 110px;
+  margin-bottom: 20px;
 }
 .footer-links {
   display: flex;
@@ -27,7 +28,6 @@ footer {
 .footer__copyright {
   color: $white;
   font-size: 12px;
-  font-weight: 400;
   letter-spacing: 0em;
   line-height: 12px;
   text-align: end;
