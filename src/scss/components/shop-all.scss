@@ -2,4 +2,16 @@
     display: flex;
     justify-content: center;
     padding: 30px 0;
+    &__container{
+        text-align: center;
+    }
+    a{
+        display: inline-block;
+    }
+    @media (max-width: 768px) {
+        a{
+            display: block;
+            width: 100%;
+        }
+    }
 }

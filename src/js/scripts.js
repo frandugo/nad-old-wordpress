@@ -159,7 +159,7 @@ function initializeCarousel(sliderSelector) {
     prevArrow: false,
     nextArrow: false,
     speed: 10000,
-    slidesToShow: 7,
+    slidesToShow: 5,
     slidesToScroll: 1,
     variableWidth: true,
     adaptiveHeight: true,
@@ -207,6 +207,12 @@ function initializeDotsSlider(sliderSelector, slidesToShow) {
     ],
   });
 
+  toggleSlickDotsArrows()
+
+  $slider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
+     toggleSlickDotsArrows();
+  });
+
 }
 
 function initializeCategorySlider(sliderSelector) {
@@ -228,6 +234,24 @@ function initializeCategorySlider(sliderSelector) {
       },
     ],
   });
+}
+
+function toggleSlickDotsArrows(){
+  const slickDots = document.querySelector(".slick-dots");
+
+      if(slickDots?.children && slickDots.children[0].className === "slick-active"){
+        jQuery("#js-prev-button-dots").hide();
+        jQuery(".slider-dots__buttons").css("justify-content", "flex-end");
+      }else if(slickDots?.children && slickDots.children[0].className !== "slick-active"){
+        jQuery("#js-prev-button-dots").show();
+        jQuery(".slider-dots__buttons").css("justify-content", "space-between");
+
+      }
+      if(slickDots?.children && slickDots.children[3].className === "slick-active" ){
+        jQuery("#js-next-button-dots").hide();
+      }else if(slickDots?.children && slickDots.children[3].className !== "slick-active"){
+        jQuery("#js-next-button-dots").show();
+      }
 }
 
 function menuMobile() {

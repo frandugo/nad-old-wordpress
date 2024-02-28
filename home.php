@@ -33,7 +33,7 @@
     </div>
 </section>
 <div class="hero">
-    <div class="hero__image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/nowadays-hero-img.png')">
+    <div class="hero__image" style="background-image: url('<?php echo the_field( 'hero_background_image' ); ?>">
         <div class="hero__image-info">
             <h2><?php the_field( 'hero_title' ); ?></h2>
             <p><?php the_field( 'hero_subtitle' ); ?></p>
@@ -41,7 +41,12 @@
         </div>
     </div>
     <div class="hero__video">
-        <video autoplay muted loop>
+        <div class="hero__video-info">
+            <h2><?php the_field( 'hero_title' ); ?></h2>
+            <p><?php the_field( 'hero_subtitle' ); ?></p>
+            <a class='btn btn__beige btn__big btn__uppercase' href="<?php the_field( 'hero_button_link' ); ?>"><?php the_field( 'hero_button_text' ); ?></a>
+        </div>
+        <video autoplay muted loop poster="<?php echo the_field( 'hero_background_image' ); ?>" class="hero__video-file">
             <source src="<?php the_field( 'hero_background_video' ); ?>" type="video/mp4">
         </video>
     </div>
@@ -88,7 +93,7 @@
             <p class="best-sellers__description"><?php the_field( 'best_sellers_subtitle' ); ?></p>
         </div>
         <div class="best-sellers__products slider"> 
-            <?php $products = get_field( 'products' ); ?>
+            <?php $products = get_field( 'best_sellers_products' ); ?>
             <?php if ( $products ) : ?>
                 <?php foreach ( $products as $post ) : ?>
                     <?php 
@@ -99,9 +104,11 @@
                         $product_image = $product->get_featured();
                         $product_price = $product->get_price();
 
+                        $product_short_description = $product->get_short_description();
+
                         $product_reviews_count = $product->get_review_count();
                         $product_rating_count = $product->get_rating_count();
-                        $product_rating = $product->get_average_rating();
+                        $product_average = $product->get_average_rating();
 
                         $product_background = get_field( "product_background", $post->ID );
                     ?>
@@ -114,13 +121,26 @@
                         <div class="bs-product__info">
                             <h2 class="bs-product__title"><?php echo $product_name; ?></h2>
                             <div class="bs-product__reviews">
-                            <?php echo "<h2>" . $product_rating_count . "<h2>"; ?>
-                            <?php 
-                            ?>
+                                <div class="bs-product__reviews-stars">   
+                                    <?php 
+                                        $starImg = get_template_directory_uri() . '/img/star-filled.svg';
+                                        if ( $product_rating_count > 0 ) {
+                                            for ($i = 1; $i <= 5; $i++) {
+                                                if($i <= $product_average) {
+                                                    echo '<img src="'. $starImg .'">';
+                                                } else {
+                                                    echo '';
+                                                }
+                                            }
+                                        } else {
+                                            echo '';
+                                        }
+                                    ?>
+                                </div>
+                                <span class="bs-product__reviews-count"><?php echo $product_reviews_count ?> Reviews</span>
                             </div>
-                            <span class="bs-product__span"><?php echo $product_reviews_count ?> reviews</span>
                             <p class="bs-product__description"></p>
-                            <p class="bs-product__bottle">750 ml/33mg per bottle</p>
+                            <p class="bs-product__bottle"><?php echo $product_short_description; ?></p>
                             <p class="bs-product__price">$<?php echo $product_price; ?></p>
                             <a href="<?php echo $product_permalink; ?>" class="btn btn__beige btn__medium bt__full btn__transform">Shop now</a>
                         </div>
@@ -140,7 +160,11 @@
     </div>
 </section>
 <section class="shop-all-button">
-    <a href="#" class="btn btn__white btn__medium btn__w340 btn__uppercase">Shop all</a>
+    <div class="container">
+        <div class="shop-all-button__container">
+            <a href="#" class="btn btn__white btn__medium btn__w340 btn__uppercase">Shop all</a>
+        </div>    
+    </div>
 </section>
 <section class="media-testimonials-container">
     <h2><?php  the_field( 'press_title' ); ?></h2>
@@ -164,30 +188,27 @@
         <h2 class="good-time__title">A good time in no time</h2>
         <p class="good-time__subtitle">Unwind. Unplift.</p>
         <div class="good-time__products slider1">
-            <div class="good-time-product__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/image-2.png' }}"/>
-                <h2 class="good-time-product__title">Classic hat</h2>
-                <p class="good-time-product__price">$20.00</p>
-                <button class="btn btn__beige btn__medium btn__full btn__uppercase">Shop now</button>
-            </div>
-            <div class="good-time-product__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/image-2.png' }}"/>
-                <h2 class="good-time-product__title">Classic hat</h2>
-                <p class="good-time-product__price">$20.00</p>
-                <button class="btn btn__beige btn__medium btn__full btn__uppercase">Shop now</button>
-            </div>
-            <div class="good-time-product__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/image-2.png' }}"/>
-                <h2 class="good-time-product__title">Classic hat</h2>
-                <p class="good-time-product__price">$20.00</p>
-                <button class="btn btn__beige btn__medium btn__full btn__uppercase">Shop now</button>
-            </div>
-            <div class="good-time-product__card">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/image-2.png' }}"/>
-                <h2 class="good-time-product__title">Classic hat</h2>
-                <p class="good-time-product__price">$20.00</p>
-                <button class="btn btn__beige btn__medium btn__full btn__uppercase">Shop now</button>
-            </div>
+        <?php $products = get_field( 'a_good_time_products' ); ?>
+            <?php if ( $products ) : ?>
+                <?php foreach ( $products as $post ) : ?>
+                    <?php 
+                        $product = wc_get_product($post->ID);
+                        $product_permalink = $product->get_permalink();
+                        $sku = $product->get_sku();
+                        $product_name = $product->get_name();
+                        $product_image = $product->get_featured();
+                        $product_price = $product->get_price();
+                    ?>
+                    <div class="good-time-product__card">
+                        <?php $image = $product->get_image( array( 300, 460 ) , array('class' => '')); ?>
+                        <?php echo $image; ?>
+                        <h2 class="good-time-product__title"><?php echo $product_name; ?></h2>
+                        <p class="good-time-product__price"><?php echo $product_price; ?></p>
+                        <a href="<?php echo $product_permalink; ?>" class="btn btn__beige btn__medium btn__full btn__uppercase">Shop now</a>
+                    </div>
+                <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
         </div>
         <div class="scroll-indicator">
             <div class="progress1" role="progressbar" aria-valuemin="0" aria-valuemax="100">
@@ -244,48 +265,22 @@
             </div>
         </div>
         <div class="more-ways__button-container">
-            <button class="btn btn__beige btn__medium btn__uppercase">Try them now</button>
+            <a href="#" class="btn btn__beige btn__medium btn__uppercase">Try them now</a>
         </div>
     </div>
 </section>
 <section class="what-everyone">
     <div class="container">
         <h2 class="what-everyone__title">What everyone is saying</h2>
-        <div class="what-everyone__video-list slider3">
-            <div class="what-everyone__card">
-                <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/tiktok.mp4' }}" type="video/mp4">
-                </video>    
-            </div>
-            <div class="what-everyone__card">
-                <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/tiktok.mp4' }}" type="video/mp4">
-                </video>    
-            </div>
-            <div class="what-everyone__card">
-                <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/tiktok.mp4' }}" type="video/mp4">
-                </video>    
-            </div>
-            <div class="what-everyone__card">
-                <video autoplay muted width="286" height="545">
-                    <source src="<?php echo get_template_directory_uri(); ?>/img/tiktok.mp4' }}" type="video/mp4">
-                </video>    
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="progress3" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-            </div>
-            <div class="scroll-indicator__buttons">
-                <button id="js-prev-button3" class="scroll-indicator__buttons--left disabled"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Left" /> </button>
-                <button id="js-next-button3" class="scroll-indicator__buttons--right"> <img src="<?php echo get_template_directory_uri(); ?>/img/Vector-136.svg'}}" alt="Move Right"> </button>
-            </div>
+        <div class="what-everyone__feeds">
+            <?php echo do_shortcode( '[tiktok-feed id="0"]'); ?>
         </div>
         <div class="what-everyone__buttons-container">
-            <button class="btn btn__white btn__medium btn__uppercase">Follow our Instagram</button>
-            <button class="btn btn__white btn__medium btn__uppercase">Follow our Tiktok</button>
+            <a href="#" class="btn btn__white btn__medium btn__uppercase">Follow our Instagram</a>
+            <a href="#" class="btn btn__white btn__medium btn__uppercase">Follow our Tiktok</a>
         </div>
     </div>
+    
 </section>
 <div class="have-questions">
     <hr class="have-questions__line--top" />

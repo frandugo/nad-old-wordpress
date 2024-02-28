@@ -405,7 +405,7 @@ button {
     width: auto;
   }
   .main-menu a {
-    font-size: 12px;
+    font-size: 14px;
     position: relative;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -840,6 +840,7 @@ button {
 .btn {
   cursor: pointer;
   font-family: "EuclidFlexMedium";
+  text-align: center;
 }
 .btn__beige {
   background: #e6b78a;
@@ -963,6 +964,18 @@ button {
   display: flex;
   justify-content: center;
   padding: 30px 0;
+}
+.shop-all-button__container {
+  text-align: center;
+}
+.shop-all-button a {
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  .shop-all-button a {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* Slider */
@@ -1157,12 +1170,45 @@ button {
   margin-bottom: 43px;
 }
 .hero__video {
+  align-items: center;
+  justify-content: center;
+  display: flex;
   height: 800px;
   overflow: hidden;
   position: relative;
 }
 .hero__video-file {
   position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero__video-info {
+  display: none;
+  position: relative;
+  top: 60px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.hero__video-info h2 {
+  color: #ffffff;
+  font-family: "EuclidFlexMedium";
+  font-size: 88px;
+  font-weight: 500;
+  letter-spacing: 2.506000042px;
+  line-height: 84px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+.hero__video-info p {
+  color: #ffffff;
+  font-family: "EuclidCircularARegular";
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 43px;
 }
 @media (max-width: 1280px) {
   .hero__image-info {
@@ -1178,32 +1224,36 @@ button {
     grid-template-columns: 1fr;
   }
   .hero__image {
+    display: none;
+  }
+  .hero__video {
     height: 490px;
   }
-  .hero__image-info {
+  .hero__video-info {
+    display: block;
     left: 0;
     bottom: 20px;
     padding: 40px;
     position: absolute;
     top: auto;
   }
-  .hero__video {
-    display: none;
-  }
 }
 @media (max-width: 768px) {
-  .hero__image-info {
+  .hero__video {
+    padding: 50px;
+  }
+  .hero__video-info {
     top: auto;
     bottom: 40px;
     padding: 50px;
   }
-  .hero__image-info h2 {
+  .hero__video-info h2 {
     font-size: 32px;
     line-height: 40px;
   }
 }
 @media (max-width: 560px) {
-  .hero__image-info {
+  .hero__video-info {
     padding: 20px;
   }
 }
@@ -1258,7 +1308,7 @@ button {
 
 .best-sellers {
   background: #ffffff;
-  padding: 108px 0 30px;
+  padding: 108px 0 0;
 }
 .best-sellers__head {
   margin-bottom: 60px;
@@ -1291,7 +1341,7 @@ button {
 }
 
 .bs-product {
-  padding: 30px 20px;
+  padding: 30px 42px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -1334,22 +1384,18 @@ button {
 .bs-product__image:hover .bs-product__image-background {
   opacity: 1;
 }
+.bs-product__info .btn {
+  display: block;
+}
 .bs-product__reviews {
-  direction: rtl;
-  display: inline-block;
-  margin-right: 3px;
-  unicode-bidi: bidi-override;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
-.bs-product__reviews input {
-  display: none;
-}
-.bs-product__reviews label {
-  color: #31374F;
-  cursor: pointer;
-  font-size: 20px;
-}
-.bs-product__reviews input:checked ~ label {
-  color: #efba87;
+.bs-product__reviews-stars {
+  display: flex;
+  gap: 5px;
 }
 .bs-product__span {
   display: inline-block;
@@ -1382,6 +1428,26 @@ button {
   text-align: center;
   color: #101010;
   padding: 16px 0 18px 0;
+}
+@media (max-width: 768px) {
+  .bs-product {
+    padding: 30px 10px;
+  }
+  .bs-product__info .btn__medium {
+    display: block;
+    width: 100%;
+  }
+  .bs-product__reviews-stars img {
+    width: 15px;
+  }
+  .bs-product__reviews-count {
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .bs-product {
+    padding: 30px 0;
+  }
 }
 
 .hero-options {
@@ -1417,7 +1483,6 @@ button {
   height: 50px;
   overflow: hidden;
   position: relative;
-  width: 100%;
   z-index: 1;
 }
 
@@ -1431,7 +1496,7 @@ button {
   padding: 12px 0;
   position: absolute;
   white-space: nowrap;
-  width: 3200px;
+  width: 3500px;
 }
 
 .animated-text__container p {
@@ -1531,6 +1596,8 @@ button {
   flex-direction: column;
   align-items: center;
   margin-right: 20px;
+  padding: 30px 0;
+  text-align: center;
 }
 .good-time-product__card img {
   border: none;
@@ -1541,6 +1608,9 @@ button {
 .good-time-product__card img:hover {
   border: 4px solid #e6b78a;
   transition: 0.2s all;
+}
+.good-time-product__card a {
+  display: inline-block;
 }
 .good-time-product__title {
   font-family: "EuclidCircularARegular";
@@ -1570,6 +1640,9 @@ button {
 @media (max-width: 768px) {
   .good-time {
     padding: 60px 0 60px 0;
+  }
+  .good-time-product__card {
+    margin-right: 0;
   }
   .good-time__title {
     font-size: 32px;
@@ -1735,26 +1808,60 @@ button {
     padding: 0.5rem;
   }
   .more-ways__button-container {
+    margin-top: 40px;
     padding: 20px 0;
   }
-  .more-ways__button-container button {
+  .more-ways__button-container a {
+    display: block;
     width: 100%;
   }
 }
 
 .what-everyone {
-  padding: 2rem 2rem 4rem;
+  padding: 40px 0 100px;
 }
 .what-everyone__title {
   font-size: 48px;
   font-weight: 500;
   text-transform: uppercase;
 }
-.what-everyone__video-list {
-  padding: 36px 0;
+.what-everyone__feeds {
+  margin-bottom: 20px;
+  padding: 36px 0 100px;
+  position: relative;
 }
-.what-everyone__video-list .what-everyone__card img {
-  width: 100%;
+.what-everyone__feeds .swiper-container {
+  position: static;
+}
+.what-everyone__feeds .tiktok-feed-item__info {
+  display: none;
+}
+.what-everyone__feeds .tiktok-feed__actions {
+  display: none;
+}
+.what-everyone__feeds .swiper-button-next, .what-everyone__feeds .swiper-button-prev {
+  bottom: 20px;
+  top: auto;
+  background-color: transparent;
+  border: 2px solid black;
+  height: 48px;
+  width: 48px;
+}
+.what-everyone__feeds .swiper-button-next:after, .what-everyone__feeds .swiper-button-prev:after {
+  content: "";
+  height: 24px;
+  width: 13px;
+}
+.what-everyone__feeds .swiper-button-prev {
+  left: auto;
+  right: 70px;
+}
+.what-everyone__feeds .swiper-button-prev:after {
+  transform: rotate(180deg);
+  background: url("http://localhost:8888/nowadays/wp-content/themes/nowadays-wip/img/Vector-136.svg") no-repeat;
+}
+.what-everyone__feeds .swiper-button-next:after {
+  background: url("http://localhost:8888/nowadays/wp-content/themes/nowadays-wip/img/Vector-136.svg") no-repeat;
 }
 .what-everyone__card {
   margin-right: 20px;
@@ -1778,6 +1885,10 @@ button {
   }
   .what-everyone__buttons-container .btn {
     width: 100%;
+  }
+  .what-everyone__feeds {
+    padding: 36px 0 100px;
+    margin-bottom: 40px;
   }
 }
 
@@ -1846,6 +1957,14 @@ button {
 [open] .have-questions__accordion summary::after {
   transform: rotate(0deg);
 }
+@media (max-width: 768px) {
+  .have-questions__content h3 {
+    font-size: 32px;
+  }
+  .have-questions__accordion summary {
+    font-size: 18px;
+  }
+}
 
 /* starts-group */
 .starts-group {
@@ -1872,7 +1991,7 @@ button {
   overflow: hidden;
   padding: 90px 0 70px;
   position: relative;
-  width: 100%;
+  width: 3500px;
   z-index: 1;
 }
 .wrap-reviews .reviews {
@@ -2040,7 +2159,7 @@ input:focus ~ .highlight {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-1750px);
+    transform: translateX(-1000px);
   }
 }
 @media (min-width: 768px) {
