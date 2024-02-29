@@ -1,36 +1,36 @@
 <?php /* Template Name: Home */ ?>
 <?php get_header(); ?>
 <section class="home-mobile-categories slider-category">
-    <div class="category">
-        <div class="category__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/category.jpg'">
-        </div>
-        <h3>Best Sellers</h3>
-    </div>
-    <div class="category">
-        <div class="category__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/category.jpg'">
-        </div>
-        <h3>Best Sellers</h3>
-    </div>
-    <div class="category">
-        <div class="category__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/category.jpg'">
-        </div>
-        <h3>Best Sellers</h3>
-    </div>
-    <div class="category">
-        <div class="category__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/category.jpg'">
-        </div>
-        <h3>Best Sellers</h3>
-    </div>
-    <div class="category">
-        <div class="category__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/category.jpg'">
-        </div>
-        <h3>Best Sellers</h3>
-    </div>
+    <?php     
+        $taxonomy     = 'product_cat';
+        $orderby      = 'name';
+        $show_count   = 1;      // 1 for yes, 0 for no
+        $pad_counts   = 0;      // 1 for yes, 0 for no
+        $hierarchical = 0;      // 1 for yes, 0 for no
+        $title        = '';
+        $empty        = 0;
+        $args = array(
+            'taxonomy'     => $taxonomy,
+            'orderby'      => $orderby,
+            'show_count'   => $show_count,
+            'pad_counts'   => $pad_counts,
+            'hierarchical' => $hierarchical,
+            'title_li'     => $title,
+            'hide_empty'   => $empty
+        );
+        $all_categories = get_categories( $args );
+        foreach ( $all_categories as $cat ) {
+            if ( $cat->category_parent == 0 ) {
+                echo '<a class="category" href="'. get_term_link($cat->slug, 'product_cat') .'">';
+                    $category_id = $cat->term_id;
+                    $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+                    $image = wp_get_attachment_url( $thumbnail_id ); 
+                    echo '<div class="category__image"><img src="'.$image.'"" alt="" /></div>';
+                    echo '<h3 class="category__title">'. $cat->name .'</h3>';
+                echo '</a>';    
+            }
+        }
+    ?>
 </section>
 <div class="hero">
     <div class="hero__image" style="background-image: url('<?php echo the_field( 'hero_background_image' ); ?>">
@@ -48,6 +48,7 @@
         </div>
         <video autoplay muted loop poster="<?php echo the_field( 'hero_background_image' ); ?>" class="hero__video-file">
             <source src="<?php the_field( 'hero_background_video' ); ?>" type="video/mp4">
+            <source src="<?php the_field( 'hero_background_video' ); ?>" type="video/webm">
         </video>
     </div>
 </div>
@@ -166,7 +167,7 @@
         </div>    
     </div>
 </section>
-<section class="media-testimonials-container">
+<section class="media-testimonials">
     <h2><?php  the_field( 'press_title' ); ?></h2>
     <div class="media-testimonials js-media-testimonials">
     <?php if ( have_rows( 'press_items' ) ) : ?>
@@ -185,8 +186,8 @@
 </section>
 <section class="good-time">
     <div class="container">
-        <h2 class="good-time__title">A good time in no time</h2>
-        <p class="good-time__subtitle">Unwind. Unplift.</p>
+        <h2 class="good-time__title"><?php the_field( 'a_good_time_title' ); ?></h2>
+        <p class="good-time__subtitle"><?php the_field( 'a_good_time_subtitle' ); ?></p>
         <div class="good-time__products slider1">
         <?php $products = get_field( 'a_good_time_products' ); ?>
             <?php if ( $products ) : ?>
@@ -248,7 +249,7 @@
                                 <a href="<?php the_sub_field( 'url' ); ?>" class="btn btn__border-white btn__medium btn__uppercase">View more</a>
                             </div>
                         </div> 
-                        <p class="more-ways__card-title"><?php the_sub_field( 'title' ); ?></p>
+                        <h2 class="more-ways__card-title"><?php the_sub_field( 'title' ); ?></h2>
                         <p class="more-ways__card-description"><?php the_sub_field( 'description' ); ?></p>
                     </div>
                 <?php endwhile; ?>
@@ -265,15 +266,15 @@
             </div>
         </div>
         <div class="more-ways__button-container">
-            <a href="#" class="btn btn__beige btn__medium btn__uppercase">Try them now</a>
+            <a href="#" class="btn btn__beige btn__medium btn__w340 btn__uppercase">Try them now</a>
         </div>
     </div>
 </section>
 <section class="what-everyone">
     <div class="container">
-        <h2 class="what-everyone__title">What everyone is saying</h2>
+        <h2 class="what-everyone__title"><?php the_field( 'what_everyone_is_saying_title' ); ?></h2>
         <div class="what-everyone__feeds">
-            <?php echo do_shortcode( '[tiktok-feed id="0"]'); ?>
+            <?php the_field( 'what_everyone_is_saying_shortcode' ); ?>
         </div>
         <div class="what-everyone__buttons-container">
             <a href="#" class="btn btn__white btn__medium btn__uppercase">Follow our Instagram</a>
@@ -286,14 +287,16 @@
     <hr class="have-questions__line--top" />
     <div class="container">
         <div class="have-questions__content">
-            <h3><?php the_field( 'questions_title' ); ?></h3>
-            <div class="have-questions__accordion">
-                <?php if ( have_rows( 'questions' ) ) : ?>
-                    <?php while ( have_rows( 'questions' ) ) : the_row(); ?>
-                        <details name="accordion">
-                            <summary><?php the_sub_field( 'question' ); ?></summary>
-                            <p><?php the_sub_field( 'answer' ); ?></p>
-                        </details>
+            <h3 class="have-questions__title"><?php the_field( 'questions_title' ); ?></h3>
+            <div class="have-questions__accordion js-toggle-parent">
+                <?php if ( have_rows( 'questions' ) ) : $count = 0; ?>
+                    <?php while ( have_rows( 'questions' ) ) : the_row(); $count++;  ?>
+                        <div role="button" class="have-questions__accordion-item js-toggle-slide <?php echo $count === 1 ? 'is-active' : '' ?> " >
+                            <h3><?php the_sub_field( 'question' ); ?></h3>
+                            <p class="js-toggle-target" style="<?php echo $count === 1 ? 'display: block' : 'display: none' ?>">
+                                <?php the_sub_field( 'answer' ); ?>
+                            </p>
+                        </div>
                     <?php endwhile; ?>
                 <?php else : ?>
                     <?php // No rows found ?>

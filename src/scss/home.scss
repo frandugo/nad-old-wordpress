@@ -3,21 +3,33 @@
   display: none;
   .category{
     margin-right: 20px;
-    width: 100%;
+    text-align: center;
+    width: 72px !important;
     &__image{
       height: 72px;
       margin-bottom: 10px;
       overflow: hidden;
+      border-radius: 4px;
       width: 100%;
       img{
-        object-fit: fill;
+        object-fit: cover;
         height: 100%;
         width: 100%;
       }
     }
+    &__title{
+      font-size: 11px;
+      color: $black;
+      line-break: anywhere;
+      text-transform: uppercase;
+    }
   }
   @media (max-width: 1080px) {
+    padding: 70px 0 15px;
     display: block;
+  } 
+  @media (max-width: 768px) {
+    padding: 50px 0 15px;
   } 
 }
 .hero {
@@ -127,14 +139,24 @@
   }
   @media (max-width: 768px) {
     &__video{
-        padding: 50px;
+      padding: 50px;
       &-info {
         top: auto;
         bottom: 40px;
         padding: 50px;
+        width: 100%;
         h2{
           font-size: 32px;
           line-height: 40px;
+          margin-bottom: 20px;
+        }
+        p{ 
+          font-size: 20px; 
+          margin-bottom: 25px; 
+        }
+        a{
+          display: block;
+          width: 100%;
         }
       }
     }
@@ -319,6 +341,11 @@
   }
   @media (max-width: 768px) {
     padding: 30px 10px;
+    &__image {
+      &-background{
+        opacity: 1;
+      }
+    }  
     &__info{
       .btn__medium{
         display: block;
@@ -334,6 +361,9 @@
       &-count{
         font-size: 12px;
       }
+    }
+    &__price {
+      padding: 5px 0 18px 0;
     }
   }
   @media (max-width: 480px) {
@@ -412,21 +442,20 @@
 }
 
 /* Media testimonials */
-.media-testimonials-container {
+.media-testimonials {
   background: #fafafa;
   overflow: hidden;
   // padding: 40px 112px;
-  padding: 80px 0;
+  padding: 40px 0 40px;
   width: auto;
   h2 {
     color: #101010;
     font-family: "EuclidFlexMedium";
     font-size: 48px;
     font-weight: 500;
-    letter-spacing: 0em;
-    margin-bottom: 40px;
     text-align: center;
     text-transform: uppercase;
+    br{ display: none; }
   }
   .media-testimonials {
     display: flex;
@@ -448,6 +477,7 @@
   @media (max-width: 768px) {
     h2{
       font-size: 32px;
+      br{ display: block; }
     }
   }
 }
@@ -474,7 +504,7 @@
     font-family: "ElicitScript-SemiBold";
     font-size: 32px;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 10px;
   }
   &__products {
     font-family: sans-serif;
@@ -530,6 +560,7 @@
     padding: 60px 0 60px 0;
     &-product__card {
       margin-right: 0;
+      padding: 10px 0 30px;
     }
     &__title{
       font-size: 32px;
@@ -608,7 +639,8 @@
       animation: spin 10s linear infinite;
     }
     &-icon{
-      bottom: 68px;
+      bottom: 0;
+      top: 0;
       left: 0;
       right: 0;
       position: absolute;
@@ -674,13 +706,17 @@
     }
   }
   &__button-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
     text-align: center;
   }
   @media (max-width: 768px) {
+    padding: 60px 0 0;
     &__image{
-      height: 72px;
+      height: 108px;
       position: relative;
-      width: 72px;
+      width: 108px;
     }
     &__title{
       font-size: 32px;
@@ -691,10 +727,10 @@
     }
     &__animation{
       &-text{
+        height: 100%;
         width: 100%;
       } 
       &-icon{
-        bottom: 32px;
         width: 20px;
       }
     }
@@ -709,6 +745,12 @@
         width: 100%;
       }
     }
+    &__products {
+      margin-bottom: 0px;
+    }
+    .scroll-indicator{
+      margin-top: 0;
+    }
   }
 }
 
@@ -718,6 +760,9 @@
     font-size: 48px;
     font-weight: 500;
     text-transform: uppercase;
+    br{
+      display: none;
+    }
   }
   &__feeds{
     margin-bottom: 20px;
@@ -769,6 +814,7 @@
   @media (max-width: 768px) {
     &__title{
       font-size: 32px;
+      br{ display: block; }
     }
     &__buttons-container { 
       flex-direction: column; 
@@ -785,7 +831,6 @@
 .have-questions {
   background-color: $beige;
   padding: 35px 0;
-
   &__line--top,
   &__line--bottom {
     border: 2px solid #101010;
@@ -794,76 +839,68 @@
   &__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-bottom: 0px;
+    padding-bottom: 60px;
     padding-top: 60px;
-    h3 {
-      color: $black;
-      font-size: 48px;
-      font-weight: 500;
-      line-height: 48px;
-      text-align: left;
-      text-transform: uppercase;
+  }
+  &__title{
+    color: $black;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 48px;
+    text-align: left;
+    text-transform: uppercase;
+    @media (max-width: 768px) {
+      font-size: 32px;
+      br{
+        display: none;
+      }
     }
   }
   &__accordion {
-    details {
-      margin-bottom: 44px;
-      p {
+    &-item{
+      display: block;
+      position: relative;
+      cursor: pointer;
+      &:not(:first-child) {
+        margin-top: 40px;
+      }
+      &:after, &:before{
+        background-color: #333;
+        content: "";
+        height: 2px;
+        position: absolute;
+        top: 15px;
+        right: -1px;
+        transition: transform 0.4s ease-in-out, background 0.4s ease-in-out;
+        width: 25px;
+      }
+      &:after {
+        transform: rotate(90deg);
+      }
+      &.is-active:before {
+        transform: rotate(135deg);
+      }
+      &.is-active:after {
+        transform: rotate(225deg);
+      }
+      h3{
+        font-size: 32px;
+        text-transform: uppercase;
+      }
+      p{
         margin-top: 25px;
         padding-right: 10%;
         line-height: 1.3;
       }
     }
-    details[open] > summary:before {
-      transform: rotate(-45deg);
-    }
-    details[open] > summary:after {
-      transform: rotate(45deg);
-    }
-    summary {
-      color: #101010;
-      font-size: 32px;
-      font-weight: 500;
-      letter-spacing: 0.3199999928474426px;
-      position: relative;
-      text-align: left;
-      text-transform: uppercase;
-      &::marker {
-        content: none;
-      }
-      &::before,
-      &::after {
-        border-bottom: 2px solid;
-        content: "";
-        height: 0;
-        position: absolute;
-        right: 0;
-        top: calc(50% - 1px);
-        transform: translateY(-50%);
-        width: 0.75em;
-      }
-
-      &::after {
-        transform: rotate(90deg);
-        transform-origin: 50% 50%;
-      }
-
-      [open] &::after {
-        transform: rotate(0deg);
+    @media (max-width: 768px) {
+      &-item{
+        &:after, &:before{ display: none; }
+        h3{
+          font-size: 18px;
+        }
       }
     }
-  }
-  @media (max-width: 768px) {
-    &__content {
-      h3 {
-        font-size: 32px;
-      }
-    }
-    &__accordion {
-      summary {
-        font-size: 18px;
-      }
-    }  
   }
 }
 
@@ -893,14 +930,13 @@
   overflow: hidden;
   padding: 90px 0 70px;
   position: relative;
-  width: calc(350px * 10);
   z-index: 1;
   .reviews {
     animation: animated-text 25s linear infinite;
     display: flex;
     gap: 3rem;
     overflow: hidden;
-    width: 3200px;
+    width: calc(350px * 10);
     &__card {
       align-items: center;
       display: flex;
@@ -1028,6 +1064,33 @@
     grid-template-columns: repeat(1, 1fr);
     &__image{
       height: 332px;
+    }
+    &__text {
+      padding: 40px 20px;
+      &-title {
+        font-size: 32px;
+      }
+      &-paragraph {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      &-grid {
+        gap: 6px;
+        .grid-point {
+          p{ 
+            font-size: 14px;
+          }
+        }
+      }
+      &-action{
+        input{
+          font-size: 16px;
+        }
+        label{
+          font-size: 16px;
+        }
+
+      }
     }
   }
 }

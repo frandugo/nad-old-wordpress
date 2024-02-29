@@ -261,6 +261,28 @@ function menuMobile() {
     jQuery("html, body").toggleClass("is-locked"), jQuery(t.currentTarget).toggleClass("is-open"), jQuery("#js-menu").toggleClass("is-shown"), e.toggleClass("is-open"), e.removeClass("is-fixed");
   });
 }
+
+function haveQuestionsAccordion() {
+
+	// jQuery(".accordion__title").on("click", function(e) {
+	// 	e.preventDefault();
+	// 	var $this = jQuery(this);
+	// 	if (!$this.hasClass("accordion-active")) {
+	// 		jQuery(".accordion__content").slideUp();
+	// 		jQuery(".accordion__title").removeClass("accordion-active");
+	// 	}
+	// 	$this.toggleClass("accordion-active");
+	// });
+
+  jQuery(".js-toggle-slide").on("click", function (e) {
+    var t = jQuery(e.currentTarget).find(".js-toggle-target");
+    jQuery(e.currentTarget).closest(".js-toggle-parent").find(".js-toggle-target").not(t).slideUp(),
+    jQuery(e.currentTarget).hasClass("is-active")
+            ? jQuery(e.currentTarget).removeClass("is-active")
+            : (jQuery(e.currentTarget).closest(".js-toggle-parent").find(".js-toggle-slide").removeClass("is-active"), jQuery(e.currentTarget).addClass("is-active")),
+        t.stop(!1, !0).slideToggle();
+    });
+};
   
 // Usage
 jQuery(document).ready(function () {
@@ -303,5 +325,7 @@ jQuery(document).ready(function () {
 
   stickyHeader();
   menuMobile();
+
+  haveQuestionsAccordion();
 
 });
